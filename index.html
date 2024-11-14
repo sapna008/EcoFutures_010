@@ -3,13 +3,617 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      gshock-casio
-    </title>
-    <link rel="stylesheet" href="globalStyle.css" />
+    <title>Navbar</title>
+
+    <!-- Google Fonts  -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts  -->
+
+    <!-- Tailwind CSS CDN  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS CDN  -->
+
+    <link rel="stylesheet" href="../DuoProject/styles/navbar.css" />
+    <link rel="stylesheet" href="../DuoProject/styles/productCard.css" />
+
+    <style>
+      body {
+        font-family: "Noto Sans JP", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 100;
+        font-style: normal;
+      }
+      /* home style */
+            /* Sliding four */
+            .all-slide-enter {
+            position: absolute;
+            transform: translateX(100%);
+            transition: transform 0.5s ease;
+        }
+
+        .all-slide-enter-active {
+            transform: translateX(0%);
+        }
+
+        .all-slide-exit {
+            position: absolute;
+            transform: translateX(0%);
+            transition: transform 0.5s ease;
+        }
+
+        .all-slide-exit-active {
+            transform: translateX(-100%);
+        }
+      /* Sliding four */
+
+      /* Carousel container */
+      .carousel-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      /* Base styles for images in the carousel */
+      .carousel-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-cover: cover;
+        transition: transform 0.7s ease;
+        z-index: 1;
+      }
+
+      /* Entering image from the right */
+      .slide-in {
+        transform: translateX(100%);
+        z-index: 2;
+      }
+
+      /* Exiting image to the left */
+      .slide-out {
+        transform: translateX(-100%);
+      }
+
+      /* Active visible image */
+      .active {
+        transform: translateX(0);
+        z-index: 3;
+      }
+
+      /* swiper 7 style */
+
+      /* swiper 7 style end */
+      /* home style end */
+
+
+    </style>
   </head>
   <body>
- 
-  <script src="./script/script.js"></script>
+    <!-- top-part -->
+    <header class="bg-gray-200 h-5 flex justify-end items-center px-5" style="font-family: din-2014, Noto Sans JP, ヒラギノ角ゴ ProN, Hiragino Kaku Gothic ProN, Meiryo, メイリオ, sans-serif; height: 20px;">
+      <a href="#support" class="text-gray-800 text-xs font-medium ml-4 hover:underline">Support</a>
+      <a href="#corporate" class="text-gray-800 text-xs font-medium ml-4 hover:underline">Corporate</a>
+  </header>
+  
+    <!-- top-part end -->
+
+    <!-- navigation bar -->
+    <div>
+      <nav class="bg-white border-none shadow-md">
+        <div class="container mx-auto px-4 py-3">
+          <div class="flex justify-between items-center">
+            <div class="flex justify-center items-center gap-4">
+              <div
+                class="xl:hidden md:block sm:block hamburger w-[24px] h-[24px] cursor-pointer"
+                id="hamburger"
+              >
+                <img
+                  class="w-full h-full"
+                  src="https://img.icons8.com/?size=100&id=36389&format=png&color=000000"
+                  alt=""
+                />
+              </div>
+
+              <a href="#" class="flex items-center">
+                <img
+                  src="/logo.svg"
+                  class="w-[65px] h-[17px]"
+                  alt="Myntra Logo"
+                />
+              </a>
+            </div>
+
+            <div class="hidden xl:block">
+              <div class="flex space-x-8 text-[14px] font-semibold relative">
+                <div
+                  class="group relative border-b-2 border-transparent hover:border-[#000000] pt-4 pb-3 transition-all duration-300"
+                  onmouseover="showDropdown('watches')"
+                  onmouseout="hideDropdown()"
+                  onclick="changePage('Watches')"
+                >
+                  <a href="" class="text-[#2c3042]">
+                    Watches
+                  </a>
+                </div>
+                <div
+                  class="group relative border-b-2 border-transparent hover:border-[#000000] pt-4 pb-3 transition-all duration-300"
+                  onmouseover="showDropdown('calculator')"
+                  onmouseout="hideDropdown()"
+                  onclick="changePage('Watches')"
+                >
+                  <a href="" class="text-[#2c3042]">
+                    Electronic Musical Instruments
+                  </a>
+                </div>
+                <div
+                  class="group relative border-b-2 border-transparent hover:border-[#000000] pt-4 pb-3 transition-all duration-300"
+                  onmouseover="showDropdown('instruments')"
+                  onmouseout="hideDropdown()"
+                  onclick="changePage('Watches')"
+                >
+                  <a href="" class="text-[#2c3042]">
+                    Calculators
+                  </a>
+                </div>
+                <div
+                  class="group relative border-b-2 border-transparent hover:border-[#000000] pt-4 pb-3 transition-all duration-300"
+                  onmouseover="showDropdown('other')"
+                  onmouseout="hideDropdown()"
+                  onclick="changePage('Watches')"
+                >
+                  <a href="" class="text-[#2c3042]">
+                    Label Printers & Others
+                  </a>
+                </div>
+
+                <div
+                  id="hoverDropdown"
+                  class="absolute z-20 bg-white-900 hidden shadow-[inset 0 0 8px rgba(0, 0, 0, 1)] w-[70rem] h-[20rem] bg-white shadow-lg top-full left-0 right-0 transform -translate-x-[5rem] my-0 mx-auto transition-all duration-300 ease-in-out opacity-0"
+                >
+                  <div class="p-4 bg-white">
+                    <div id="hoverContent">Hover Content</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-8">
+              <div
+                class="relative lg:flex hidden items-center bg-white rounded-full border-b-2"
+              >
+                <input
+                  type="text"
+                  placeholder="Search...."
+                  class="bg-transparent px-4 py-2 w-[200px] text-sm focus:outline-none"
+                />
+                <img
+                  src="https://img.icons8.com/?size=100&id=132&format=png&color=000000"
+                  class="w-5 h-5 ml-3"
+                  alt="Search Icon"
+                />
+              </div>
+
+              <div class="flex items-center gap-6 relative">
+                <div
+                  class="flex flex-col items-center cursor-pointer border-b-4 border-transparent"
+                >
+                  <img
+                    src="https://img.icons8.com/?size=100&id=87&format=png&color=000000"
+                    class="w-5"
+                    alt="Wishlist"
+                  />
+                  <span class="text-xs hidden lg:block xl:block"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- navigation bar ended -->
+
+
+    <!-- home page  -->
+         <!-- First carousel-->
+    <div class="relative w-full h-screen overflow-hidden">
+      <!-- Carousel Image Container -->
+      <div id="carousel-container" class="carousel-container">
+        <img
+          id="carousel-image-1"
+          src=""
+          alt="carousel image 1"
+          class="carousel-image active"
+        />
+        <img
+          id="carousel-image-2"
+          src=""
+          alt="carousel image 2"
+          class="carousel-image slide-in"
+        />
+      </div>
+
+      <!-- Previous Button -->
+      <img
+        src="https://i.ibb.co/NNr2vqk/left-chevron.png"
+        alt="previous icon"
+        class="absolute left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-white rounded-full border border-gray-300 p-1 cursor-pointer opacity-70 hover:opacity-100"
+        onclick="prevImage()"
+      />
+
+      <!-- Next Button -->
+      <img
+        src="https://i.ibb.co/pr6m3YT/right-arrow-angle.png"
+        alt="next icon"
+        class="absolute right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-white rounded-full border border-gray-300 p-1 cursor-pointer opacity-70 hover:opacity-100"
+        onclick="nextImage()"
+      />
+    </div>
+    <!-- First carousel ended-->
+
+    <!-- Second carousel -->
+
+    <div class="relative w-full h-auto overflow-hidden mt-0">
+      <swiper-container
+        class="mySwiper"
+        navigation="true"
+        space-between="30"
+        centered-slides="true"
+        autoplay-delay="2500"
+        autoplay-disable-on-interaction="false"
+      >
+        <swiper-slide>
+          <img
+            class="w-full h-full object-contain"
+            src="https://i.ibb.co/DVqfKgC/car2desk1.jpg"
+            alt="slide1"
+          />
+        </swiper-slide>
+        <swiper-slide>
+          <img
+            class="w-full h-full object-contain"
+            src="https://i.ibb.co/b50vH6K/car2desk2.jpg"
+            alt="slide2"
+          />
+        </swiper-slide>
+      </swiper-container>
+    </div>
+    <!-- Second carousel end -->
+
+    <!-- third carousel -->
+    <swiper-container
+      class="mySwiper"
+      navigation="true"
+      centered-slides="true"
+      autoplay-delay="2500"
+    >
+      <swiper-slide>
+        <img
+          class="w-full h-full object-contain"
+          src="https://i.ibb.co/tHyVsfS/cc1.jpg"
+          alt="slide2"
+        />
+      </swiper-slide>
+      <swiper-slide>
+        <img
+          class="w-full h-full object-contain"
+          src="https://i.ibb.co/QfvMmcM/cc2.jpg"
+          alt="slide2"
+        />
+      </swiper-slide>
+      <swiper-slide>
+        <img
+          class="w-full h-full object-contain"
+          src="https://i.ibb.co/ncM0g19/cc3.jpg"
+          alt="slide2"
+        />
+      </swiper-slide>
+    </swiper-container>
+    <!-- third carousel -->
+
+    <!-- forth carousel -->
+    <body class="bg-gray-100">
+
+      <!-- Full-width carousel positioned at the top -->
+      <div class="relative w-full h-64 md:h-72 lg:h-[650px] overflow-hidden">
+          <!-- Carousel Image Container -->
+          <div id="all-carousel-container-1" class="w-full h-full relative flex justify-center items-center">
+              <img id="all-carousel-image-1" src="" alt="carousel image" class="w-full h-full object-cover">
+          </div>
+          
+          <!-- Previous Button -->
+          <img src="https://i.ibb.co/NNr2vqk/left-chevron.png" 
+               alt="previous icon" 
+               class="absolute left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-white rounded-full border border-gray-300 p-0 cursor-pointer opacity-70 hover:opacity-100"
+               onclick="allPrevImage1()">
+          
+          <!-- Next Button -->
+          <img src="https://i.ibb.co/pr6m3YT/right-arrow-angle.png" 
+               alt="next icon" 
+               class="absolute right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-white rounded-full border border-gray-300 p-0 cursor-pointer opacity-70 hover:opacity-100"
+               onclick="allNextImage1()">
+      </div>
+    <!-- forth carousel -->
+    <!-- five-->
+    <div class="relative w-full h-full">
+      <!-- Mobile Image (Visible only on small screens) -->
+      <!-- <img src="https://i.ibb.co/yXFrRQB/fivmob.jpg" alt="Mobile Image" class="w-full h-[700px] object-cover md:hidden"> -->
+
+      <!-- Desktop Image (Visible only on medium and larger screens) -->
+      <img src="https://i.ibb.co/nrjdB9q/fiv.jpg" alt="Desktop Image">
+  </div>
+    <!-- five -->
+     <!-- six  -->
+     <div>
+      <img src="https://i.ibb.co/nRfk1JZ/aaa.jpg" alt="">
+     </div>
+     <!-- six -->
+
+<!-- swiper-7 -->
+<div class="newDropHeading">
+  <div class="featuredBrandLogoContainer mx-16">
+    <h1 style="font-size: 2em; font-weight: bold;">NEW DROPS</h1>
+  </div>
+
+  <div class="relative overflow-hidden w-full">
+    <!-- Left Arrow -->
+    <button id="left-arrow" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full z-10">
+      &larr;
+    </button>
+
+    <!-- Product Container -->
+    <div id="product-cards" class="flex gap-6 overflow-x-auto snap-x scroll-smooth w-full px-8 py-4"> <!-- Increased gap, padding, and width -->
+      <!-- Cards will be dynamically appended here by JavaScript -->
+    </div>
+
+    <!-- Right Arrow -->
+    <button id="right-arrow" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full z-10">
+      &rarr;
+    </button>
+  </div>
+</div>
+
+ <!-- swiper 7 ended -->  
+  
+ <!-- 8 swiper -->
+       
+    <!-- Eight -->
+    <div class="featuredBrandLogoContainer mx-16">
+      <h1 style="font-size: 2em; font-weight: bold;">TOPICS</h1>
+    </div>
+    <div
+    class="image-container-brand-logo flex justify-between w-[calc(100%-120px)] mx-auto p-0"
+  >
+    <a href="#" class="flex-1 mx-2 overflow-hidden"
+      ><img
+        src="https://i.ibb.co/Nn0sFn9/wtc1.jpg"
+        alt="b"
+        class="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-110"
+    /></a>
+    <a href="#" class="flex-1 mx-2 overflow-hidden"
+      ><img
+        src="https://i.ibb.co/199wnS9/wtc2.jpg"
+        alt="c"
+        class="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-110"
+    /></a>
+    <a href="#" class="flex-1 mx-2 overflow-hidden"
+      ><img
+        src="https://i.ibb.co/ypCBWzr/wtc3.jpg"
+        alt="d"
+        class="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-110"
+    /></a>
+    <a href="#" class="flex-1 mx-2 overflow-hidden"
+      ><img
+        src="https://i.ibb.co/VYdFz2g/wtc4.jpg"
+        alt="e"
+        class="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-110"
+    /></a>
+    <a href="#" class="flex-1 mx-2 overflow-hidden"
+      ><img
+        src="https://i.ibb.co/rM6jmQ5/wtc5.jpg"
+        alt="f"
+        class="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-110"
+    /></a>
+    <a href="#" class="flex-1 mx-2 overflow-hidden"
+    ><img
+      src="https://i.ibb.co/4mN1J2c/wtc6.jpg"
+      alt="f"
+      class="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-110"
+  /></a>
+  </div>
+    <!-- Eight -->
+ <!-- 8 swiper End -->
+</div>
+
+
+
+
+    <!-- home page end -->
   </body>
+  <!-- home script -->
+  <script>
+    // Image arrays for desktop and mobile views
+    const Dskcarasolearray = [
+      "https://i.ibb.co/Gt54Q54/descarasole1.jpg",
+      "https://i.ibb.co/Gt54Q54/descarasole1.jpg",
+      "https://i.ibb.co/BB2PLtR/carasole3.jpg",
+      "https://i.ibb.co/XZ3XN26/carasole4.jpg",
+    ];
+    const mobcarasolearray = [
+      "https://i.ibb.co/F0FDKf3/mcarasole1.jpg",
+      "https://i.ibb.co/gy0nnJy/mcarasole2.jpg",
+      "https://i.ibb.co/qd3cNf9/mcarasole3.jpg",
+      "https://i.ibb.co/7jvpPXk/mcarasole4.jpg",
+    ];
+
+    let currentIndex = 0;
+    let isMobile = window.innerWidth <= 768;
+    let imageArray = isMobile ? mobcarasolearray : Dskcarasolearray;
+    let autoSlideInterval;
+    let activeImage = document.getElementById("carousel-image-1");
+    let inactiveImage = document.getElementById("carousel-image-2");
+
+    // Function to load the current image in the carousel
+    function loadImage() {
+      activeImage.src = imageArray[currentIndex];
+      inactiveImage.src = imageArray[(currentIndex + 1) % imageArray.length];
+    }
+
+    // Function to apply sliding effect for next image
+    function nextImage() {
+      slideImages(true);
+      currentIndex = (currentIndex + 1) % imageArray.length;
+      setTimeout(() => loadImage(), 700); // Delay to allow for transition
+      stopAutoSlide();
+    }
+
+    // Function to apply sliding effect for previous image
+    function prevImage() {
+      slideImages(false);
+      currentIndex =
+        (currentIndex - 1 + imageArray.length) % imageArray.length;
+      setTimeout(() => loadImage(), 700); // Delay to allow for transition
+      stopAutoSlide();
+    }
+
+    // Slide images in opposite directions
+    function slideImages(isNext) {
+      if (isNext) {
+        activeImage.classList.replace("active", "slide-out");
+        inactiveImage.classList.replace("slide-in", "active");
+      } else {
+        activeImage.classList.replace("active", "slide-out");
+        inactiveImage.classList.replace("slide-in", "active");
+      }
+
+      // Swap active and inactive references
+      [activeImage, inactiveImage] = [inactiveImage, activeImage];
+
+      // Reset classes for next slide
+      setTimeout(() => {
+        inactiveImage.classList.replace("slide-out", "slide-in");
+      }, 700);
+    }
+
+    // Function to start auto sliding every 3 seconds
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(() => {
+        slideImages(true);
+        currentIndex = (currentIndex + 1) % imageArray.length;
+        setTimeout(() => loadImage(), 700); // Delay to allow for transition
+      }, 3000); // Change interval to 3 seconds
+    }
+
+    // Function to stop auto sliding
+    function stopAutoSlide() {
+      clearInterval(autoSlideInterval);
+      // Restart auto slide after a delay of 3 seconds of no interaction
+      setTimeout(startAutoSlide, 3000);
+    }
+
+    // Event listener to detect screen resize and switch image arrays
+    window.addEventListener("resize", () => {
+      const newIsMobile = window.innerWidth <= 768;
+      if (newIsMobile !== isMobile) {
+        isMobile = newIsMobile;
+        imageArray = isMobile ? mobcarasolearray : Dskcarasolearray;
+        currentIndex = 0;
+        loadImage();
+      }
+    });
+
+    // Initialize the carousel
+    loadImage();
+    startAutoSlide();
+
+    //fourth script
+          // Image array for the carousel
+      const allCarouselArray1 = [
+          "https://i.ibb.co/9GTBRnx/fr1.jpg",
+          "https://i.ibb.co/KVCB1M3/fr2.jpg",
+          "https://i.ibb.co/n0Vt5Xq/fr3.jpg"
+      ];
+
+      let allCurrentIndex1 = 0;
+      let allAutoSlideInterval1;
+
+      // Function to load the current image in the carousel
+      function allLoadImage1() {
+          const allImageElement = document.getElementById("all-carousel-image-1");
+          allImageElement.src = allCarouselArray1[allCurrentIndex1];
+      }
+
+      // Apply sliding animation classes
+      function allApplySlidingEffect1(allIsNext) {
+          const allImageElement = document.getElementById("all-carousel-image-1");
+
+          // Remove any existing classes
+          allImageElement.classList.remove("all-slide-enter", "all-slide-enter-active", "all-slide-exit", "all-slide-exit-active");
+
+          // Determine animation direction based on whether it's next or previous
+          if (allIsNext) {
+              allImageElement.classList.add("all-slide-enter");
+              requestAnimationFrame(() => allImageElement.classList.add("all-slide-enter-active"));
+          } else {
+              allImageElement.classList.add("all-slide-exit");
+              requestAnimationFrame(() => allImageElement.classList.add("all-slide-exit-active"));
+          }
+      }
+
+      // Function to move to the next image and stop auto-sliding
+      function allNextImage1() {
+          allApplySlidingEffect1(true);
+          allCurrentIndex1 = (allCurrentIndex1 + 1) % allCarouselArray1.length;
+          setTimeout(allLoadImage1, 500);  // Delay load to allow transition
+          allStopAutoSlide1();  // Stop auto-slide on manual click
+      }
+
+      // Function to move to the previous image and stop auto-sliding
+      function allPrevImage1() {
+          allApplySlidingEffect1(false);
+          allCurrentIndex1 = (allCurrentIndex1 - 1 + allCarouselArray1.length) % allCarouselArray1.length;
+          setTimeout(allLoadImage1, 500);  // Delay load to allow transition
+          allStopAutoSlide1();  // Stop auto-slide on manual click
+      }
+
+      // Function to start auto sliding every 3 seconds
+      function allStartAutoSlide1() {
+          allAutoSlideInterval1 = setInterval(() => {
+              allApplySlidingEffect1(true);
+              allCurrentIndex1 = (allCurrentIndex1 + 1) % allCarouselArray1.length;
+              setTimeout(allLoadImage1, 500);  // Delay load to allow transition
+          }, 3000); // Change interval to 3 seconds
+      }
+
+      // Function to stop auto sliding
+      function allStopAutoSlide1() {
+          clearInterval(allAutoSlideInterval1);
+          // Restart auto slide after a delay of 3 seconds of no interaction
+          setTimeout(allStartAutoSlide1, 3000);
+      }
+
+      // Event listener to detect screen resize and adjust layout (without changing the image array)
+      window.addEventListener('resize', () => {
+          allLoadImage1(); // Reload the current image after resizing
+      });
+
+      // Initialize the carousel
+      allLoadImage1();
+      allStartAutoSlide1();
+
+    //forth script end
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <!-- home script end-->
+  <script src="/script.js"></script>
+  <script src="./script/newDrop.js"></script>
+
 </html>
