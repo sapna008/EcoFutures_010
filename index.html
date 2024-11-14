@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gshok-Casio</title>
+    <title>Navbar</title>
 
     <!-- Google Fonts  -->
 
@@ -19,7 +19,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Tailwind CSS CDN  -->
 
-    <link rel="stylesheet" href="../styles/navbar.css" />
+    <link rel="stylesheet" href="../DuoProject/styles/navbar.css" />
+    <link rel="stylesheet" href="../DuoProject/styles/productCard.css" />
 
     <style>
       body {
@@ -66,7 +67,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        
+        object-cover: cover;
         transition: transform 0.7s ease;
         z-index: 1;
       }
@@ -87,6 +88,10 @@
         transform: translateX(0);
         z-index: 3;
       }
+
+      /* swiper 7 style */
+
+      /* swiper 7 style end */
       /* home style end */
 
 
@@ -120,9 +125,9 @@
 
               <a href="#" class="flex items-center">
                 <img
-                  src="/LOGO.svg"
+                  src="/logo.svg"
                   class="w-[65px] h-[17px]"
-                  alt="Casio-logo"
+                  alt="Myntra Logo"
                 />
               </a>
             </div>
@@ -352,6 +357,85 @@
      </div>
      <!-- six -->
 
+<!-- swiper-7 -->
+<div class="newDropHeading">
+  <div class="featuredBrandLogoContainer mx-16">
+    <h1 style="font-size: 2em; font-weight: bold;">NEW DROPS</h1>
+  </div>
+
+  <div class="relative overflow-hidden w-full">
+    <!-- Left Arrow -->
+    <button id="left-arrow" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full z-10">
+      &larr;
+    </button>
+
+    <!-- Product Container -->
+    <div id="product-cards" class="flex gap-6 overflow-x-auto snap-x scroll-smooth w-full px-8 py-4"> <!-- Increased gap, padding, and width -->
+      <!-- Cards will be dynamically appended here by JavaScript -->
+    </div>
+
+    <!-- Right Arrow -->
+    <button id="right-arrow" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full z-10">
+      &rarr;
+    </button>
+  </div>
+</div>
+
+ <!-- swiper 7 ended -->  
+  
+ <!-- 8 swiper -->
+       
+    <!-- Eight -->
+    <div class="featuredBrandLogoContainer mx-16">
+      <h1 style="font-size: 2em; font-weight: bold;">TOPICS</h1>
+    </div>
+    <div
+    class="image-container-brand-logo flex justify-between w-[calc(100%-120px)] mx-auto p-0"
+  >
+    <a href="#" class="flex-1 mx-2 overflow-hidden"
+      ><img
+        src="https://i.ibb.co/Nn0sFn9/wtc1.jpg"
+        alt="b"
+        class="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-110"
+    /></a>
+    <a href="#" class="flex-1 mx-2 overflow-hidden"
+      ><img
+        src="https://i.ibb.co/199wnS9/wtc2.jpg"
+        alt="c"
+        class="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-110"
+    /></a>
+    <a href="#" class="flex-1 mx-2 overflow-hidden"
+      ><img
+        src="https://i.ibb.co/ypCBWzr/wtc3.jpg"
+        alt="d"
+        class="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-110"
+    /></a>
+    <a href="#" class="flex-1 mx-2 overflow-hidden"
+      ><img
+        src="https://i.ibb.co/VYdFz2g/wtc4.jpg"
+        alt="e"
+        class="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-110"
+    /></a>
+    <a href="#" class="flex-1 mx-2 overflow-hidden"
+      ><img
+        src="https://i.ibb.co/rM6jmQ5/wtc5.jpg"
+        alt="f"
+        class="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-110"
+    /></a>
+    <a href="#" class="flex-1 mx-2 overflow-hidden"
+    ><img
+      src="https://i.ibb.co/4mN1J2c/wtc6.jpg"
+      alt="f"
+      class="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-110"
+  /></a>
+  </div>
+    <!-- Eight -->
+ <!-- 8 swiper End -->
+</div>
+
+
+
+
     <!-- home page end -->
   </body>
   <!-- home script -->
@@ -530,4 +614,6 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
     <!-- home script end-->
   <script src="/script.js"></script>
+  <script src="./script/newDrop.js"></script>
+
 </html>
