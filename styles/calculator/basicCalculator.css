@@ -53,18 +53,20 @@ a {
 }
 .container {
   display: flex;
+  justify-content: center;
+
   width: 90%;
   margin: auto;
 }
-.left-filters-cont {
+#left-filters-cont {
   width: 258px;
   height: 1648px;
   margin-right: 10px;
 }
 #right-products-cont {
   display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
 }
 .card {
@@ -132,6 +134,11 @@ a {
 .disp-price {
   font-size: 14px;
   font-weight: 500;
+}
+@media screen and (max-width: 770px) {
+  #left-filters-cont {
+    display: none;
+  }
 }
 @media screen and (min-width: 770px) and (max-width: 1020px) {
   #right-products-cont {
