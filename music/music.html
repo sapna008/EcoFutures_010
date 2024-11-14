@@ -1,0 +1,227 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Display</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link rel="stylesheet" href="music.css">
+
+
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <a href="#">All</a>
+    <a href="#">CELVIANO</a>
+    <a href="#">Privia</a>
+    <a href="#">CDP</a>
+    <a href="#">Casiotone</a>
+    <a href="#">CT-X</a>
+    <a href="#">Casiotone Mini Keyboards</a>
+    <a href="#">Others</a>
+</div>
+
+<div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="mb-4">
+            <h2 class="font-bold mb-2">Sort</h2>
+            <div class="flex items-center mb-2">
+                <input type="radio" id="newest" name="sort" class="mr-2">
+                <label for="newest">Newest</label>
+            </div>
+            <div class="flex items-center mb-2">
+                <input type="radio" id="price-high-low" name="sort" class="mr-2">
+                <label for="price-high-low">Price:High-Low</label>
+            </div>
+            <div class="flex items-center mb-2">
+                <input type="radio" id="price-low-high" name="sort" class="mr-2">
+                <label for="price-low-high">Price:Low-High</label>
+            </div>
+            <div class="flex items-center mb-2">
+                <input type="radio" id="weight-heavy-light" name="sort" class="mr-2">
+                <label for="weight-heavy-light">Weight:Heavy-Light</label>
+            </div>
+            <div class="flex items-center mb-2">
+                <input type="radio" id="weight-light-heavy" name="sort" class="mr-2">
+                <label for="weight-light-heavy">Weight:Light-Heavy</label>
+            </div>
+        </div>
+        <div class="border-t border-gray-300 py-2">
+            <div class="flex justify-between items-center cursor-pointer" onclick="toggleSection('category')">
+                <span>Category</span>
+                <i id="category-icon" class="fas fa-plus"></i>
+            </div>
+            <div id="category-options" class="hidden mt-2">
+                <button class="block w-full text-left px-2 py-1" style="background-color: #d7dde4;text-align: center;">Digital Piano</button>
+                <button class="block w-full text-left px-2 py-1" style="background-color: #d7dde4; margin-top:0.5em ; text-align: center;">Digital Keyboard</button>
+            </div>
+        </div>
+        <div class="border-t border-gray-300 py-2">
+            <div class="flex justify-between items-center cursor-pointer" onclick="toggleSection('keys')">
+                <span>Number of Keys</span>
+                <i id="keys-icon" class="fas fa-plus"></i>
+            </div>
+            <div id="keys-options" class="hidden mt-2 keys-options">
+                <button>61 keys</button>
+                <button>12 keys</button>
+                <button>31 keys</button>
+                <button>41 keys</button>
+                <button>15 keys</button>
+                <button>45 keys</button>
+            </div>
+        </div>
+        <div class="border-t border-gray-300 py-2">
+            <div class="flex justify-between items-center cursor-pointer" onclick="toggleSection('price')">
+                <span>Price Range</span>
+                <i id="price-icon" class="fas fa-plus"></i>
+            </div>
+            <div id="price-options" class="hidden mt-2 price-options">
+                <label><input type="checkbox"> Below ₹5000 <span>7</span></label>
+                <label><input type="checkbox"> ₹5000 - ₹10000 <span>7</span></label>
+                <label><input type="checkbox"> ₹10000 - ₹20000 <span>8</span></label>
+                <label><input type="checkbox"> ₹20000 - ₹30000 <span>7</span></label>
+                <label><input type="checkbox"> ₹30000 - ₹40000 <span>7</span></label>
+                <label><input type="checkbox"> ₹40000 - ₹50000 <span>9</span></label>
+                <label><input type="checkbox"> Above ₹50000 <span>10</span></label>
+            </div>
+        </div>
+        <div class="border-t border-gray-300 py-2">
+            <div class="flex justify-between items-center cursor-pointer" onclick="toggleSection('rhythms')">
+                <span>Rhythms / Pattern</span>
+                <i id="rhythms-icon" class="fas fa-plus"></i>
+            </div>
+            <div id="rhythms-options" class="hidden mt-2 rhythms-options">
+                <button>250</button>
+                <button>210</button>
+                <button>14</button>
+                <button>63</button>
+                <button>78</button>
+                <button>25</button>
+                <button>36</button>
+            </div>
+        </div>
+        <div class="border-t border-gray-300 py-2">
+            <div class="flex justify-between items-center cursor-pointer" onclick="toggleSection('polyphony')">
+                <span>Max Polyphony</span>
+                <i id="polyphony-icon" class="fas fa-plus"></i>
+            </div>
+            <div id="polyphony-options" class="hidden mt-2 polyphony-options">
+                <button>120</button>
+                <button>450</button>
+                <button>630</button>
+                <button>780</button>
+                <button>12</button>
+                <button>25</button>
+            </div>
+        </div>
+        <div class="border-t border-gray-300 py-2">
+            <div class="flex justify-between items-center cursor-pointer" onclick="toggleSection('functions')">
+                <span>Functions</span>
+                <i id="functions-icon" class="fas fa-plus"></i>
+            </div>
+            <div id="functions-options" class="hidden mt-2 functions-options">
+                <button>Connection to APP</button>
+                <button>LCD Display</button>
+                <button>Dance Music Mode</button>
+            </div>
+        </div>
+        <div class="border-t border-gray-300 py-2">
+            <div class="flex justify-between items-center cursor-pointer" onclick="toggleSection('brand')">
+                <span>Brand</span>
+                <i id="brand-icon" class="fas fa-plus"></i>
+            </div>
+            <div id="brand-options" class="hidden mt-2 brand-options">
+                <button>CELVIANO Grand Hybrid</button>
+                <button>CELVIANO</button>
+                <button>Privia</button>
+                <button>CDP</button>
+                <button>CT-X</button>
+                <button>Casiotone</button>
+                <button>Mini Keyboard</button>
+            </div>
+        </div>
+        <div class="border-t border-gray-300 py-2">
+            <div class="flex justify-between items-center cursor-pointer" onclick="toggleSection('color')">
+                <span>Color</span>
+                <i id="color-icon" class="fas fa-plus"></i>
+            </div>
+            <div id="color-options" class="hidden mt-2 color-options">
+                <button style="background-color: black;"></button>
+                <button style="background-color: white;"></button>
+                <button style="background-color: red;"></button>
+                <button style="background-color: Blue;"></button>
+                <button style="background-color: Green;"></button>
+                <button style="background-color:Yellow;"></button>
+                <button style="background-color: pink;"></button>
+            </div>
+        </div>
+        <div class="border-t border-gray-300 py-4">
+            <button class="w-full border border-gray-300 py-2">Clear</button>
+        </div>
+    </div>
+
+    <!-- Product Cards -->
+    <div id="cards-container" class="cards-container"></div>
+</div>
+
+<!-- <footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <div>
+                <h3>Products</h3>
+                <ul>
+                    <li>Products</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Customer Support</h3>
+                <ul>
+                    <li>Support</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Corporate</h3>
+                <ul>
+                    <li>Corporate</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Warranty</h3>
+                <ul>
+                    <li>Warranty</li>
+                </ul>
+            </div>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-xing"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Labour Compliance</a>
+            <a href="#">Secretarial (redirect)</a>
+            <a href="#">CSR Policy</a>
+            <a href="#">Cookie Policy</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Sitemap</a>
+            <a href="#">Contact Us</a>
+            <a href="#">India</a>
+        </div>
+        <div class="copyright">
+            © 2024 Casio India Co., Pvt. Ltd.
+        </div>
+        <div class="recycle-section">
+            <p class="font-semibold">Please help us recycle e-waste and plastic waste responsibly.</p>
+            <p>For more information or e-waste pick up, please call 1800 2022746 or <a href="#">click here</a> for more details.</p>
+        </div>
+    </div>
+</footer> -->
+
+<script src="music.js"></script>
+
