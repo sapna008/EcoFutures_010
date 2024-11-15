@@ -13,6 +13,9 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+
     <!-- Google Fonts  -->
 
     <!-- Tailwind CSS CDN  -->
@@ -24,6 +27,7 @@
     <link rel="stylesheet" href="../DuoProject/styles/productCard.css" />
 
     <style>
+
       body {
         font-family: "Noto Sans JP", sans-serif;
         font-optical-sizing: auto;
@@ -90,36 +94,15 @@
         z-index: 3;
       }
 
-      /* product category */
-      /* Add zoom effect on hover */
-    .image-zoom:hover {
-      transform: scale(1.1);
-      transition: transform 0.3s ease;
-    }
+      /* swiper 7 style */
 
-    .slider-wrapper {
-      overflow: hidden;
-      position: relative;
-    }
-
-    .slider-track {
-      display: flex;
-      transition: transform 0.5s ease;
-    }
-
-    .slider-item {
-      min-width: 20%;
-      margin-right: 10px;
-      position: relative;
-    }
-      /* product end */
+      /* swiper 7 style end */
       /* home style end */
 
 
     </style>
   </head>
   <body>
-
     <!-- top-part -->
     <header class="bg-gray-200 h-5 flex justify-end items-center px-5" style="font-family: din-2014, Noto Sans JP, ヒラギノ角ゴ ProN, Hiragino Kaku Gothic ProN, Meiryo, メイリオ, sans-serif; height: 20px;">
       <a href="#support" class="text-gray-800 text-xs font-medium ml-4 hover:underline">Support</a>
@@ -149,7 +132,7 @@
                 <img
                   src="/logo.svg"
                   class="w-[65px] h-[17px]"
-                  alt="Casio Logo"
+                  alt="Myntra Logo"
                 />
               </a>
             </div>
@@ -196,6 +179,7 @@
                     Label Printers & Others
                   </a>
                 </div>
+
                 <div
                   id="hoverDropdown"
                   class="absolute z-20 bg-white-900 hidden shadow-[inset 0 0 8px rgba(0, 0, 0, 1)] w-[70rem] h-[20rem] bg-white shadow-lg top-full left-0 right-0 transform -translate-x-[5rem] my-0 mx-auto transition-all duration-300 ease-in-out opacity-0"
@@ -379,232 +363,131 @@
      <!-- six -->
 
 <!-- swiper-7 -->
-<div class="newDropHeading">
-  <div class="featuredBrandLogoContainer mx-4 md:mx-16 mt-6">
-    <h1 class="text-2xl md:text-3xl font-bold">NEW DROPS</h1>
-  </div>
-
-  <div class="relative overflow-hidden w-full">
-    <!-- Left Arrow -->
-    <button id="left-arrow" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full z-10">
-      &larr;
-    </button>
-
-    <!-- Product Container -->
-    <div id="product-cards" class="flex gap-4 overflow-x-auto snap-x scroll-smooth w-full px-4 md:px-8 py-4"> <!-- Responsive gap, padding, and width -->
-      <!-- Cards will be dynamically appended here by JavaScript -->
-    </div>
-
-    <!-- Right Arrow -->
-    <button id="right-arrow" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full z-10">
-      &rarr;
-    </button>
-  </div>
+<!-- Navbar -->
+<div class="navbar flex items-center space-x-4 bg-white text-gray-600 text-sm px-4 py-2 sticky top-0 z-50 mt-4 border-t border-gray-300">
+  <a href="#" class="hover:text-gray-800 pt-4 pb-4">New Drop</a>
+  <a href="#"><img src="https://www.casio.com/content/dam/casio/global/watch/g_shock/logo/g-shock.svg" alt="G-Shock" class="h-4"></a>
+  <a href="#" class="hover:text-gray-800 pt-4 pb-4">Vintage</a>
+  <a href="#"><img src="https://www.casio.com/content/dam/casio/global/watch/edifice/logo/edifice.svg" alt="Edifice" class="h-4"></a>
+  <a href="#" class="hover:text-gray-800 pt-4 pb-4">CASIO COLLECTION</a>
+  
+  <!-- Extra items hidden on mobile -->
+  <a href="#" class="hover:text-gray-800 hidden md:inline pt-4 pb-4">Baby-G</a>
+  <a href="#"><img src="https://www.casio.com/content/dam/casio/global/watch/baby_g/logo/baby-g.svg" alt="Baby-G" class="h-4 hidden md:inline"></a>
+  <a href="#"><img src="https://www.casio.com/content/dam/casio/global/watch/protrek/logo/protrek.svg" alt="Protrek" class="h-4 hidden md:inline"></a>
+  <a href="#" class="hover:text-gray-800 hidden md:inline pt-4 pb-4">Clock</a>
+  <a href="#" class="hover:text-gray-800 hidden md:inline pt-4 pb-4">Accessories</a>
 </div>
 
+<!-- Navbar ended-->
+</div>
  <!-- swiper 7 ended -->  
-  <!-- view all button -->
-  <div class="flex justify-center ">
-    <button onclick="viewallitem()" class="bg-black text-white uppercase h-[50px] w-[300px] px-4 pt-4 pb-4 text-xs sm:text-sm md:text-base lg:text-sm hover:bg-gray-500 transition-colors duration-200">
-      View All New Drop
-    </button>
-  </div>
- 
-  
-  
-  <!-- button end -->
-  
- <!-- 8 swiper -->
-    <div class="featuredBrandLogoContainer mx-16">
-      <h1 style="font-size: 2em; font-weight: bold;">TOPICS</h1>
-    </div>
-    <div
-    class="image-container-brand-logo flex justify-between w-[calc(100%-120px)] mx-auto p-0"
-  >
-    <a href="#" class="flex-1 mx-2 overflow-hidden"
-      ><img
-        src="https://i.ibb.co/Nn0sFn9/wtc1.jpg"
-        alt="b"
-        class="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-110"
-    /></a>
-    <a href="#" class="flex-1 mx-2 overflow-hidden"
-      ><img
-        src="https://i.ibb.co/199wnS9/wtc2.jpg"
-        alt="c"
-        class="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-110"
-    /></a>
-    <a href="#" class="flex-1 mx-2 overflow-hidden"
-      ><img
-        src="https://i.ibb.co/ypCBWzr/wtc3.jpg"
-        alt="d"
-        class="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-110"
-    /></a>
-    <a href="#" class="flex-1 mx-2 overflow-hidden"
-      ><img
-        src="https://i.ibb.co/VYdFz2g/wtc4.jpg"
-        alt="e"
-        class="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-110"
-    /></a>
-    <a href="#" class="flex-1 mx-2 overflow-hidden"
-      ><img
-        src="https://i.ibb.co/rM6jmQ5/wtc5.jpg"
-        alt="f"
-        class="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-110"
-    /></a>
-    <a href="#" class="flex-1 mx-2 overflow-hidden"
-    ><img
-      src="https://i.ibb.co/4mN1J2c/wtc6.jpg"
-      alt="f"
-      class="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-110"
-  /></a>
-  </div>
-  
+  <!-- view alll -->
 
+  <div class="newDropHeading">
+    <div class="featuredBrandLogoContainer mx-4 md:mx-16 mt-6">
+      <h1 class="text-2xl md:text-3xl font-bold">New Drops</h1>
+    </div>
+    <div id="product-cards" class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 px-4 py-4">
+        <!-- Cards will be dynamically appended here by JavaScript -->
+      </div>
+      
   
-  <p style="font-family: din-2014, Noto Sans JP, ヒラギノ角ゴ ProN, Hiragino Kaku Gothic ProN, Meiryo, メイリオ, sans-serif;" class="featuredBrandLogoContainer mx-16 text-xs mt-4 mb-2"> Metal-clad daring meets sophisticated <br>gleam in G-SHOCK watches with Tough <br>Solar and Smartphone Link.</p>
-  </div>
+  <!-- veiw all end -->
+
+    <!-- Eight -->
  <!-- 8 swiper End -->
-
-
 </div>
-    <!-- PRODUCT CATEGORY -->
-    <div class="featuredBrandLogoContainer mx-16 mt-4 mb-2">
-      <h1 style="font-size: 2em; font-weight: bold;">PRODUCT CATEGORY</h1>
+
+
+<!-- footer -->
+<footer class="bg-gray-200 py-8">
+  <div class="container mx-auto px-4">
+    <!-- Main Sections with Responsive Layout -->
+    <div class="flex flex-col md:flex-row justify-center md:space-x-32 space-y-6 md:space-y-0"> <!-- Stacks on mobile, horizontal on desktop -->
+      <!-- Products Section -->
+      <div class="text-xs text-left"> <!-- Align text to left on all screens -->
+        <h5 class="font-bold mb-2">Products</h5>
+        <ul>
+          <li><a href="#" class="text-gray-600">Products</a></li>
+        </ul>
+      </div>
+      <!-- Customer Support Section -->
+      <div class="text-xs text-left">
+        <h5 class="font-bold mb-2">Customer Support</h5>
+        <ul>
+          <li><a href="#" class="text-gray-600">Support</a></li>
+        </ul>
+      </div>
+      <!-- Corporate Section -->
+      <div class="text-xs text-left">
+        <h5 class="font-bold mb-2">Corporate</h5>
+        <ul>
+          <li><a href="#" class="text-gray-600">Corporate</a></li>
+        </ul>
+      </div>
+      <!-- Warranty Section -->
+      <div class="text-xs text-left">
+        <h5 class="font-bold mb-2">Warranty</h5>
+        <ul>
+          <li><a href="#" class="text-gray-600">Warranty</a></li>
+        </ul>
+      </div>
     </div>
-      <div class="slider-wrapper w-full max-w-7xl mx-auto">
-        <div class="slider-track flex">
-          <!-- Repeat this block for each image, add the image URLs accordingly -->
-          <div class="slider-item image-zoom">
-            <img src="https://www.casio.com/content/casio/locales/in/en/products/_jcr_content/root/responsivegrid/container_559207393/content_panel_list_c/content_panel_202208/image.casiocoreimg.jpeg/1722256441186/category-page-edifice-ecb-2000dc-1b.jpeg" alt="Product 1" class="w-full h-auto object-cover rounded-lg shadow-lg">
-          </div>
-          <div class="slider-item image-zoom">
-            <img src="https://www.casio.com/content/casio/locales/in/en/products/_jcr_content/root/responsivegrid/container_559207393/content_panel_list_c/content_panel_202207261408078954/image.casiocoreimg.jpeg/1722255094884/category-page-g-shock-ga-2100-1a1.jpeg" alt="Product 2" class="w-full h-auto object-cover rounded-lg shadow-lg">
-          </div>
-          <div class="slider-item image-zoom">
-            <img src="https://www.casio.com/content/casio/locales/in/en/products/_jcr_content/root/responsivegrid/container_559207393/content_panel_list_c/content_panel_202208231347382905/image.casiocoreimg.jpeg/1731304466857/category-page-casio-collection-mtp-1302pd-9a.jpeg" alt="Product 3" class="w-full h-auto object-cover rounded-lg shadow-lg">
-          </div>
-          <div class="slider-item image-zoom">
-            <img src="https://www.casio.com/content/casio/locales/in/en/products/_jcr_content/root/responsivegrid/container_559207393/content_panel_list_c/content_panel_202208/image.casiocoreimg.jpeg/1722256441186/category-page-edifice-ecb-2000dc-1b.jpeg" alt="Product 4" class="w-full h-auto object-cover rounded-lg shadow-lg">
-          </div>
-          <div class="slider-item image-zoom">
-            <img src="https://www.casio.com/content/dam/casio/product-info/locales/in/en/timepiece/product/watch/S/SH/SHE/she-4560bd-1a/assets/SHE-4560BD-1AU.png.transform/product-panel/image.png" alt="Product 5" class="w-full h-auto object-cover rounded-lg shadow-lg">
-          </div>
-          <div class="slider-item image-zoom">
-            <img src="https://www.casio.com/content/dam/casio/product-info/locales/in/en/calc/product/scientific/F/FX/FX9/fx-991esplus-2pk/assets/fx-991ES_PLUS-2PK_F.png.transform/product-panel/image.png" alt="Product 6" class="w-full h-auto object-cover rounded-lg shadow-lg">
-          </div>
-          <div class="slider-item image-zoom">
-            <img src="https://www.casio.com/content/casio/locales/in/en/products/_jcr_content/root/responsivegrid/container_559207393/content_panel_list_c/content_panel_202207261403215922/image.casiocoreimg.png/1661243403835/px-s3100bk-01.png" alt="Product 7" class="w-full h-auto object-cover rounded-lg shadow-lg">
-          </div>
-
-          <div class="slider-item image-zoom">
-            <img src="https://www.casio.com/content/dam/casio/product-info/locales/in/en/calc/product/scientific/F/FX/FX9/fx-991ESPLUS-2/assets/fx-991ES_PLUS-2_F.png.transform/product-panel/image.png" alt="Product 8" class="w-full h-auto object-cover rounded-lg shadow-lg">
-          </div>
-        </div>
     
-        <!-- Slider Navigation Buttons -->
-        <button id="prevSlide" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">
-          &#60;
-        </button>
-        <button id="nextSlide" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">
-          &#62;
-        </button>
+    <!-- Social Media and Additional Links with Responsive Layout -->
+    <div class="flex flex-col md:flex-row justify-between items-center mt-8 p-4 space-y-4 md:space-y-0">
+      <!-- Social Media Icons -->
+      <div class="flex space-x-4 text-xl">
+        <a href="#" class="text-black-600"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-black-600"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="text-black-600"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="text-black-600">
+          <img src="https://www.casio.com/content/dam/casio/global/common/logo/tw_icon.png" alt="" class="w-6 h-6">
+        </a>
+        <a href="#" class="text-black-600"><i class="fab fa-linkedin-in"></i></a>
       </div>
-    
-    <!-- PRODUCT CATEGORY -->
-    <!-- home page end -->
+    </div>
 
+    <!-- Additional Links Section with Responsive Layout -->
+    <div class="flex flex-col items-start text-black-600 text-xs p-4 space-y-2 text-left">
+      <a href="#" class="mr-4">Privacy Policy</a>
+      <a href="#" class="mr-4">Labour Compliance</a>
+      <a href="#" class="mr-4">CSR Policy</a>
+      <a href="#" class="mr-4">Terms of Use</a>
+      <a href="#" class="mr-4">Sitemap</a>
+      <a href="#">Contact Us</a>
+      <p>&copy;2024 Casio India Co., Pvt. Ltd.</p>
+    </div>
 
-    <!-- footer -->
-    <footer class="bg-gray-200 py-8">
-      <div class="container mx-auto px-4">
-        <!-- Main Sections with Responsive Layout -->
-        <div class="flex flex-col md:flex-row justify-center md:space-x-32 space-y-6 md:space-y-0"> <!-- Stacks on mobile, horizontal on desktop -->
-          <!-- Products Section -->
-          <div class="text-xs text-left"> <!-- Align text to left on all screens -->
-            <h5 class="font-bold mb-2">Products</h5>
-            <ul>
-              <li><a href="#" class="text-gray-600">Products</a></li>
-            </ul>
-          </div>
-          <!-- Customer Support Section -->
-          <div class="text-xs text-left">
-            <h5 class="font-bold mb-2">Customer Support</h5>
-            <ul>
-              <li><a href="#" class="text-gray-600">Support</a></li>
-            </ul>
-          </div>
-          <!-- Corporate Section -->
-          <div class="text-xs text-left">
-            <h5 class="font-bold mb-2">Corporate</h5>
-            <ul>
-              <li><a href="#" class="text-gray-600">Corporate</a></li>
-            </ul>
-          </div>
-          <!-- Warranty Section -->
-          <div class="text-xs text-left">
-            <h5 class="font-bold mb-2">Warranty</h5>
-            <ul>
-              <li><a href="#" class="text-gray-600">Warranty</a></li>
-            </ul>
-          </div>
-        </div>
-        
-        <!-- Social Media and Additional Links with Responsive Layout -->
-        <div class="flex flex-col md:flex-row justify-between items-center mt-8 p-4 space-y-4 md:space-y-0">
-          <!-- Social Media Icons -->
-          <div class="flex space-x-4 text-xl">
-            <a href="#" class="text-black-600">
-              <img src="https://www.casio.com/content/dam/casio/global/common/logo/fb_icon.png" alt="" class="w-6 h-6">
-            </a>
-            <a href="#" class="text-black-600">
-              <img src="https://www.casio.com/content/dam/casio/global/common/logo/insta_icon.png" alt="" class="w-6 h-6">
-            </a>
-            <a href="#" class="text-black-600">
-              <img src="https://www.casio.com/content/dam/casio/global/common/logo/youtube_icon.png" alt="" class="w-6 h-6">
-            </a>
-            <a href="#" class="text-black-600">
-              <img src="https://www.casio.com/content/dam/casio/global/common/logo/tw_icon.png" alt="" class="w-6 h-6">
-            </a>
-            
-            <a href="#" class="text-black-600">
-              <img src="https://www.casio.com/content/dam/casio/global/common/logo/linkedin_icon.png" alt="" class="w-6 h-6">
-            </a>
-          </div>
-        </div>
-    
-        <!-- Additional Links Section with Responsive Layout -->
-        <div class="flex flex-col items-start text-black-600 text-xs p-4 space-y-2 text-left">
-          <a href="#" class="mr-4">Privacy Policy</a>
-          <a href="#" class="mr-4">Labour Compliance</a>
-          <a href="#" class="mr-4">CSR Policy</a>
-          <a href="#" class="mr-4">Terms of Use</a>
-          <a href="#" class="mr-4">Sitemap</a>
-          <a href="#">Contact Us</a>
-          <p>&copy;2024 Casio India Co., Pvt. Ltd.</p>
-        </div>
-    
-        <!-- Lower Text with Left Alignment and Responsive Layout -->
-        <div class="text-left text-black-800 font-bold text-xs mt-8 p-4">
-          <p class="pb-2">Please help us recycle e-waste and plastic waste responsibly.</p>
-          <p>For more information or e-waste pick up, please call 1800 2022746 or <a href="#" class="text-blue-600">click here</a> for more details.</p>
-        </div>
-      </div>
-    </footer>
+    <!-- Lower Text with Left Alignment and Responsive Layout -->
+    <div class="text-left text-black-800 font-bold text-xs mt-8 p-4">
+      <p class="pb-2">Please help us recycle e-waste and plastic waste responsibly.</p>
+      <p>For more information or e-waste pick up, please call 1800 2022746 or <a href="#" class="text-blue-600">click here</a> for more details.</p>
+    </div>
+  </div>
+</footer>
+
 
 <!-- footer ended -->
+
+
+
+
+    <!-- home page end -->
   </body>
   <!-- home script -->
   <script>
     // Image arrays for desktop and mobile views
     const Dskcarasolearray = [
-      "https://i.ibb.co/Gt54Q54/descarasole1.jpg",
-      "https://i.ibb.co/Gt54Q54/descarasole1.jpg",
+      
+      "https://www.casio.com/content/casio/locales/in/en/products/watches/new-drops/_jcr_content/root/responsivegrid/carousel/item_1727935002401.casiocoreimg.jpeg/1727935079790/pk-kv01.jpeg",
       "https://i.ibb.co/BB2PLtR/carasole3.jpg",
       "https://i.ibb.co/XZ3XN26/carasole4.jpg",
     ];
     const mobcarasolearray = [
-      "https://i.ibb.co/F0FDKf3/mcarasole1.jpg",
-      "https://i.ibb.co/gy0nnJy/mcarasole2.jpg",
+      
+      "https://www.casio.com/content/casio/locales/in/en/products/watches/new-drops/_jcr_content/root/responsivegrid/carousel/item_1727935002401/spImage.casiocoreimg.jpeg/1727935079790/pk-kv01-sp.jpeg",
       "https://i.ibb.co/qd3cNf9/mcarasole3.jpg",
       "https://i.ibb.co/7jvpPXk/mcarasole4.jpg",
     ];
@@ -765,42 +648,10 @@
       allStartAutoSlide1();
 
     //forth script end
-
-    //product category
-    const prevSlide = document.getElementById('prevSlide');
-    const nextSlide = document.getElementById('nextSlide');
-    const sliderTrack = document.querySelector('.slider-track');
-
-    let currentPosition = 0;
-    const totalImages = document.querySelectorAll('.slider-item').length;
-    const visibleImages = 5; // Show 5 images at once
-
-    function moveSlider() {
-      const offset = -currentPosition * (100 / visibleImages);
-      sliderTrack.style.transform = `translateX(${offset}%)`;
-    }
-
-    nextSlide.addEventListener('click', () => {
-      if (currentPosition < totalImages - visibleImages) {
-        currentPosition++;
-      }
-      moveSlider();
-    });
-
-    prevSlide.addEventListener('click', () => {
-      if (currentPosition > 0) {
-        currentPosition--;
-      }
-      moveSlider();
-    });
-
-    // Initialize the slider position
-    moveSlider();
-    //product category ended
   </script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
     <!-- home script end-->
   <script src="/script.js"></script>
-  <script src="./script/newDrop.js"></script>
+  <script src="../script/alldrop.js"></script>
 
 </html>
