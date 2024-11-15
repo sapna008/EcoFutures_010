@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wishlist Page</title>
+    <link rel="stylesheet" href="../styles/wishlist.css" />
+  </head>
+  <body>
+    <section class="wishlist">
+      <h1>Your Wishlist</h1>
+      <ul id="wishlist-items"></ul>
+    </section>
+
+    <script>
+      const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+      const wishlistItemsList = document.getElementById("wishlist-items");
+
+      if (wishlist.length > 0) {
+        wishlist.forEach((item, index) => {
+          const li = document.createElement("li");
+          li.textContent = `${item.name} - ${item.price}`;
+
+          const removeButton = document.createElement("button");
+          removeButton.textContent = "Remove";
+          removeButton.addEventListener("click", () => {
+            wishlist.splice(index, 1);
+            localStorage.setItem("wishlist", JSON.stringify(wishlist));
+            li.remove();
+            if (wishlist.length === 0) {
+              wishlistItemsList.innerHTML = "<li>Your wishlist is empty.</li>";
+            }
+          });
+
+          li.appendChild(removeButton);
+          wishlistItemsList.appendChild(li);
+        });
+      } else {
+        wishlistItemsList.innerHTML = "<li>Your wishlist is empty.</li>";
+      }
+    </script>
+  </body>
+</html>

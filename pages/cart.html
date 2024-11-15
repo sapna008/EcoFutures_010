@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="../styles/cart.css" />
+  </head>
+  <body>
+    <section class="cart">
+      <h1>Your Cart</h1>
+      <ul id="cart-items"></ul>
+    </section>
+
+    <script>
+      const cartItem = JSON.parse(localStorage.getItem("cartItem"));
+      const cartItemsList = document.getElementById("cart-items");
+
+      if (cartItem) {
+        const li = document.createElement("li");
+        li.textContent = `${cartItem.name} - ${cartItem.price}`;
+        const removeButton = document.createElement("button");
+        removeButton.textContent = "Remove";
+        removeButton.addEventListener("click", () => {
+          localStorage.removeItem("cartItem");
+          li.remove();
+        });
+        li.appendChild(removeButton);
+        cartItemsList.appendChild(li);
+      } else {
+        cartItemsList.innerHTML = "<li>No items in the cart.</li>";
+      }
+    </script>
+  </body>
+</html>
