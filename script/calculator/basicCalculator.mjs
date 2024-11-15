@@ -1,7 +1,6 @@
 import basicCalData from "../../data/basicCalculatorData.mjs";
 
 const displayProducts = document.getElementById("right-products-cont");
-console.log(displayProducts);
 
 displayCards(basicCalData);
 async function displayCards(products) {
