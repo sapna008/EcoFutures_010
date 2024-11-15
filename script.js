@@ -79,34 +79,46 @@ dropdown.addEventListener("mouseleave", function () {
   hideDropdown();
 });
 
+
 const watches = `<div class="watch-dropdown">
-  <ul class="flex justify-between list-none p-0 overflow-hidden">
+<ul class="flex justify-between list-none p-0 overflow-hidden">
+   <li class="font-semibold text-sm my-2 ease-in-out border-b-2 border-transparent  hover:font-bold  cursor-pointer">G-SHOCK</li>
+   <ul class="dropdown-items container mx-auto py-8 flex space-x-4">
+      <div class="text-center">
+         <img src="https://www.casio.com/content/experience-fragments/casio/locales/in/en/common/header/master/_jcr_content/root/responsivegrid/visual_header_copy_c/globalContainer/globalItem1/tab/item_1719898572045/content_panel_list/content_panel_202407021439276070/image.casiocoreimg.png/1726653913673/02.png" alt="Image 1" class="h-40 w-40 object-cover"> 
+         <p>hello</p>
+      </div>
+      <div class="text-center">
+         <img src="https://www.casio.com/content/experience-fragments/casio/locales/in/en/common/header/master/_jcr_content/root/responsivegrid/visual_header_copy_c/globalContainer/globalItem1/tab/item_1719898572045/content_panel_list/content_panel_202407021439276084/image.casiocoreimg.png/1723444951740/gm-110gc-1a.png" alt="Image 2" class="h-40 w-40 object-cover"> 
+         <p>hello</p>
+      </div>
+      <div class="text-center">
+         <img src="https://www.casio.com/content/experience-fragments/casio/locales/in/en/common/header/master/_jcr_content/root/responsivegrid/visual_header_copy_c/globalContainer/globalItem1/tab/item_1719898572045/content_panel_list/content_panel_2024070215025143411/image.casiocoreimg.png/1722235011028/gr-b300-1a.png" alt="Image 3" class="h-40 w-40 object-cover"> 
+         <p>hello</p>
+      </div>
+   </ul>
+</ul >
+    </div>
     <div> 
-      <li class="font-semibold  text-sm my-2 ease-in-out border-b-2 border-transparent hover:border-[#000000]  hover:font-bold hover:scale-105 cursor-pointer" >G-SHOCK</li>
-      <ul class="dropdown-items">
-       
+      <li class=" list-none font-semibold  text-sm my-2 ease-in-out border-b-2 border-transparent hover:text-gray-500 hover:font-bold  cursor-pointer"">BABY-G</li>
+      <ul class="dropdown-items" >
+
       </ul>
     </div>
     <div> 
-      <li class="font-semibold  text-sm my-2 ease-in-out border-b-2 border-transparent hover:border-[#000000] hover:font-bold hover:scale-105 cursor-pointer"">BABY-G</li>
+      <li class=" list-none font-semibold  text-sm my-2 ease-in-out border-b-2 border-transparent hover:text-gray-500 hover:font-bold  cursor-pointer"">EDIFICE</li>
       <ul class="dropdown-items">
 
       </ul>
     </div>
     <div> 
-      <li class="font-semibold  text-sm my-2 ease-in-out border-b-2 border-transparent hover:border-[#000000] hover:font-bold hover:scale-105 cursor-pointer"">EDIFICE</li>
-      <ul class="dropdown-items">
-
-      </ul>
-    </div>
-    <div> 
-      <li class="font-semibold  text-sm my-2 ease-in-out border-b-2 border-transparent hover:border-[#000000] hover:font-bold hover:scale-105 cursor-pointer"">PRO TREK</li>
+      <li class=" list-none font-semibold  text-sm my-2 ease-in-out border-b-2 border-transparent hover:text-gray-500 hover:font-bold  cursor-pointer"">PRO TREK</li>
       <ul class="dropdown-items">
 
       </ul>
     </div>
     <div>
-      <li class="font-semibold  text-sm my-2 ease-in-out border-b-2 border-transparent hover:border-[#000000]  hover:font-bold hover:scale-105 cursor-pointer"">SHEEN</li>
+      <li class="list-none font-semibold  text-sm my-2 ease-in-out border-b-2 border-transparent hover:text-gray-500  hover:font-bold cursor-pointer"">SHEEN</li>
       <ul class="dropdown-items">
 
       </ul>
@@ -117,109 +129,89 @@ const watches = `<div class="watch-dropdown">
 
 const calculator = `
 <div class="calculator-dropdown">
-  <ul class="flex justify-between list-none gap-2 overflow-hidden">
-    <div> 
-      <li class="font-semibold  text-sm my-2 ease-in-out border-b-2 border-transparent hover:border-[#000000]  hover:font-bold hover:scale-105 cursor-pointer" >G-SHOCK</li>
-      <ul class="dropdown-items">
+<ul class="flex justify-between list-none p-0 overflow-hidden">
+   <li class="font-semibold text-sm my-2 ease-in-out border-b-2 border-transparent  hover:font-bold  cursor-pointer"></li>
+   <ul class="dropdown-items container mx-auto py-8 flex space-x-4">
+      <div class="text-center p-2">
+         <img src="https://www.casio.com/content/experience-fragments/casio/locales/in/en/common/header/master/_jcr_content/root/responsivegrid/visual_header_copy_c/globalContainer/globalItem3/tab/nav_tab_item/content_panel_list/content_panel_202406272033571941/image.casiocoreimg.png/1719837870011/fx-991cw-f.png" alt="Image 1" class="h-40 w-40 object-cover"> 
+         <div class="pt-4"><a href="./pages/calculator/basicCalculator.html">All Basic Calculators</a></div>
+      </div>
+      <div class="text-center p-2">
+         <img src="https://www.casio.com/content/experience-fragments/casio/locales/in/en/common/header/master/_jcr_content/root/responsivegrid/visual_header_copy_c/globalContainer/globalItem3/tab/item_1718770052010/content_panel_list/content_panel_202406191336410036/image.casiocoreimg.jpeg/1719839046947/wd-320mt-seq1.jpeg" alt="Image 2" class="h-40 w-40 object-cover"> 
+         <div class="pt-4"><a href="./pages/calculator/basicCalculator.html?subpath=practical">Practical Calculators</a></div>
+      </div>
+      <div class="text-center p-2">
+         <img src="https://www.casio.com/content/experience-fragments/casio/locales/in/en/common/header/master/_jcr_content/root/responsivegrid/visual_header_copy_c/globalContainer/globalItem3/tab/item_1718770052010/content_panel_list/content_panel_202406191310503991/image.casiocoreimg.jpeg/1719838641098/mj-120gst.jpeg" alt="Image 3" class="h-40 w-40 object-cover"> 
+         <div class="pt-4"><a href="./pages/calculator/basicCalculator.html?subpath=check">Check Calculators</a></div>
+      </div>
+      <div class="text-center p-2">
+         <img src="https://www.casio.com/content/experience-fragments/casio/locales/in/en/common/header/master/_jcr_content/root/responsivegrid/visual_header_copy_c/globalContainer/globalItem3/tab/nav_tab_item/content_panel_list/content_panel_202406272052230743/image.casiocoreimg.jpeg/1730966356628/fx-cg50-seq1.jpeg" alt="Image 3" class="h-40 w-40 object-cover"> 
+         <div class="pt-4"><a href="../EcoFuture_010/pages/calculator/basicCalculatorCategory.html?subpath=waterprotected-dustproof">Water-Protected & Dust-Proof Calculators</a></div>
+      </div>
+      <div class="text-center p-2">
+         <img src="https://www.casio.com/content/experience-fragments/casio/locales/in/en/common/header/master/_jcr_content/root/responsivegrid/visual_header_copy_c/globalContainer/globalItem3/tab/item_1718770052010/content_panel_list/content_panel_202406191316482854/image.casiocoreimg.jpeg/1730174204679/jw-200sc-pk-seq1.jpeg" alt="Image 3" class="h-40 w-40 object-cover"> 
+         <div class="pt-4"><a href="../EcoFuture_010/pages/calculator/basicCalculatorCategory.html?subpath=colorful">Colorful Calculators</a></div>
+      </div>
+      <div class="text-center p-2">
+         <img src="https://www.casio.com/content/experience-fragments/casio/locales/in/en/common/header/master/_jcr_content/root/responsivegrid/visual_header_copy_c/globalContainer/globalItem3/tab/item_1718770052010/content_panel_list/content_panel_202406191336410037/image.casiocoreimg.jpeg/1730174212882/dr-140r-we-seq1.jpeg" alt="Image 3" class="h-40 w-40 object-cover"> 
+         <div class="pt-4"><a href="../EcoFuture_010/pages/calculator/basicCalculatorCategory.html?subpath=printer">Printing Calculators</a></div>
+      </div>
+   </ul>
+</ul >
 
-      </ul>
-    </div>
-    <div> 
-      <li class="font-semibold  text-sm my-2 ease-in-out border-b-2 border-transparent hover:border-[#000000]  hover:font-bold hover:scale-105 cursor-pointer"">BABY-G</li>
-      <ul class="dropdown-items"> 
- 
-      </ul> 
-    </div> 
-    <div>  
-      <li class="font-semibold  text-sm my-2 ease-in-out border-b-2 border-transparent hover:border-[#000000]  hover:font-bold hover:scale-105 cursor-pointer"">EDIFICE</li>
-      <ul class="dropdown-items"> 
- 
-      </ul> 
-    </div> 
-    <div>  
-      <li class="font-semibold  text-sm my-2 ease-in-out border-b-2 border-transparent hover:border-[#000000]  hover:font-bold hover:scale-105 cursor-pointer"">PRO TREK</li>
-      <ul class="dropdown-items">
-
-      </ul>
-    </div>
-    <div>
-      <li class="font-semibold  text-sm my-2 ease-in-out border-b-2 border-transparent hover:border-[#000000]  hover:font-bold hover:scale-105 cursor-pointer"">SHEEN</li>
-      <ul class="dropdown-items">
-
-      </ul>
-    </div>
-  </ul>
 </div>
 `;
 
 const instruments = `<div class="instrument-dropdown">
-  <ul class="flex justify-between list-none p-0 overflow-hidden">
-      <div> 
-      <li class="font-semibold  text-sm my-2 ease-in-out border-b-2 border-transparent hover:border-[#000000]  hover:font-bold hover:scale-105 cursor-pointer" >G-SHOCK</li>
-      <ul class="dropdown-items">
-
-      </ul>
-    </div>
-    <div> 
-      <li class="font-semibold  text-sm my-2 ease-in-out border-b-2 border-transparent hover:border-[#000000]  hover:font-bold hover:scale-105 cursor-pointer"">BABY-G</li>
-      <ul class="dropdown-items">
-
-      </ul>
-    </div>
-    <div> 
-      <li class="font-semibold  text-sm my-2 ease-in-out border-b-2 border-transparent hover:border-[#000000]  hover:font-bold hover:scale-105 cursor-pointer"">EDIFICE</li>
-      <ul class="dropdown-items">
-
-      </ul>
-    </div>
-    <div> 
-      <li class="font-semibold  text-sm my-2 ease-in-out border-b-2 border-transparent hover:border-[#000000]  hover:font-bold hover:scale-105 cursor-pointer"">PRO TREK</li>
-      <ul class="dropdown-items">
-
-      </ul>
-    </div>
-    <div>
-      <li class="font-semibold  text-sm my-2 ease-in-out border-b-2 border-transparent hover:border-[#000000]  hover:font-bold hover:scale-105 cursor-pointer"">SHEEN</li>
-      <ul class="dropdown-items">
-
-      </ul>
-    </div>
-  </ul>
+<ul class="flex justify-between list-none p-0 overflow-hidden">
+   <li class="font-semibold text-sm my-2 ease-in-out border-b-2 border-transparent  hover:font-bold  cursor-pointer"></li>
+   <ul class="dropdown-items container mx-auto py-8 flex space-x-4">
+      <div class="text-center p-2">
+         <img src="https://www.casio.com/content/experience-fragments/casio/locales/in/en/common/header/master/_jcr_content/root/responsivegrid/visual_header_copy_c/globalContainer/globalItem2/tab/item_1718778020716/content_panel_list/content_panel_202406191523288730/image.casiocoreimg.jpeg/1731583199682/mini.jpeg" alt="Image 1" class="h-40 w-40 object-cover"> 
+         <div class="pt-4"><a href="../music/music.html">All</a></div>
+      </div>
+      <div class="text-center p-2">
+         <img src="https://www.casio.com/content/experience-fragments/casio/locales/in/en/common/header/master/_jcr_content/root/responsivegrid/visual_header_copy_c/globalContainer/globalItem2/tab/item_1718778020716/content_panel_list/content_panel_202406191523288742/image.casiocoreimg.jpeg/1731583024652/ct-x.jpeg" alt="Image 3" class="h-40 w-40 object-cover"> 
+         <div class="pt-4"><a href="./pages/calculator/basicCalculator.html?subpath=check">CT-X</a></div>
+      </div>
+      <div class="text-center p-2">
+         <img src="https://www.casio.com/content/experience-fragments/casio/locales/in/en/common/header/master/_jcr_content/root/responsivegrid/visual_header_copy_c/globalContainer/globalItem2/tab/item_1718778020716/content_panel_list/content_panel_202406191523288743/image.casiocoreimg.jpeg/1731583153016/cdp-s.jpeg" alt="Image 3" class="h-40 w-40 object-cover"> 
+         <div class="pt-4"><a href="../EcoFuture_010/pages/calculator/basicCalculatorCategory.html?subpath=waterprotected-dustproof">CDP</a></div>
+      </div>
+      <div class="text-center p-2">
+         <img src="https://www.casio.com/content/experience-fragments/casio/locales/in/en/common/header/master/_jcr_content/root/responsivegrid/visual_header_copy_c/globalContainer/globalItem2/tab/item_1718778020716/content_panel_list/content_panel_202406191605578885/image.casiocoreimg.jpeg/1731583810079/piano.jpeg" alt="Image 3" class="h-40 w-40 object-cover"> 
+         <div class="pt-4"><a href="../EcoFuture_010/pages/calculator/basicCalculatorCategory.html?subpath=colorful">CALVIANO</a></div>
+      </div>
+      <div class="text-center p-2">
+         <img src="https://www.casio.com/content/experience-fragments/casio/locales/in/en/common/header/master/_jcr_content/root/responsivegrid/visual_header_copy_c/globalContainer/globalItem2/tab/item_1718778020716/content_panel_list/content_panel_202406191605578886/image.casiocoreimg.png/1731567559962/ap-750-1.png" alt="Image 3" class="h-40 w-40 object-cover"> 
+         <div class="pt-4"><a href="../EcoFuture_010/pages/calculator/basicCalculatorCategory.html?subpath=printer">Casiotone Mini</a></div>
+      </div>
+   </ul>
+</ul >
 </div>
 `;
 
 const other = `<div class="other-dropdown">
-  <ul class="flex justify-between list-none p-0 overflow-hidden">
+
     <div> 
-      <li class="font-semibold  text-sm my-2 ease-in-out border-b-2 border-transparent hover:border-[#000000]  hover:font-bold hover:scale-105 cursor-pointer" >G-SHOCK</li>
-      <ul class="dropdown-items">
+      <li class=" list-none font-semibold  text-xl my-2 ease-in-out border-b-2 border-transparent hover:text-gray-500 hover:font-bold  cursor-pointer"">Label Printers & Tapes</li>
+      <ul class="dropdown-items" >
 
       </ul>
     </div>
     <div> 
-      <li class="font-semibold  text-sm my-2 ease-in-out border-b-2 border-transparent hover:border-[#000000]  hover:font-bold hover:scale-105 cursor-pointer"">BABY-G</li>
-      <ul class="dropdown-items">
-
-      </ul>
-    </div>
-    <div> 
-      <li class="font-semibold  text-sm my-2 ease-in-out border-b-2 border-transparent hover:border-[#000000]  hover:font-bold hover:scale-105 cursor-pointer"">EDIFICE</li>
+      <li class=" list-none font-semibold  text-sm my-2 ease-in-out border-b-2 border-transparent hover:text-gray-500 hover:font-bold  cursor-pointer"">Label Printers</li>
       <ul class="dropdown-items">
 
       </ul>
     </div>
     <div> 
-      <li class="font-semibold  text-sm my-2 ease-in-out border-b-2 border-transparent hover:border-[#000000]  hover:font-bold hover:scale-105 cursor-pointer"">PRO TREK</li>
+      <li class=" list-none font-semibold  text-sm my-2 ease-in-out border-b-2 border-transparent hover:text-gray-500 hover:font-bold  cursor-pointer"">Label Tapes</li>
       <ul class="dropdown-items">
 
       </ul>
     </div>
-    <div>
-      <li class="font-semibold  text-sm my-2 ease-in-out hover:font-bold hover:scale-105 cursor-pointer"">SHEEN</li>
-      <ul class="dropdown-items">
 
-      </ul>
-    </div>
   </ul>
 </div>`;
 
@@ -281,4 +273,7 @@ function handleProfileDropdown(isHover) {
       dropdown2.classList.add("hidden");
     }, 300);
   }
+}
+function viewallitem(){
+  window.location.href = "pages/viewall.html";
 }
