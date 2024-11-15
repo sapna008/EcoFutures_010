@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Wishlist</title>
+    <style>
+      /* Basic reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        min-height: 100vh;
+      }
+
+      .container {
+        border-radius: 12px;
+        padding: 20px 30px;
+        width: 100%;
+        max-width: 1200px;
+        margin: 20px auto;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .product {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        justify-content: space-around;
+      }
+
+      .product-card {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      }
+
+      .product-card img {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 15px;
+      }
+
+      .product-card h2 {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .product-item {
+        font-size: 0.9rem;
+        color: #666;
+        margin: 8px 0;
+      }
+
+      .product-item strong {
+        color: #333;
+      }
+
+      .price {
+        color: #e74c3c;
+        font-size: 1.2rem;
+        margin: 15px 0;
+        font-weight: bold;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #3498db;
+        color: #fff;
+        text-decoration: none;
+        font-size: 1rem;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        margin-top: 10px;
+      }
+
+      .button:hover {
+        background-color: #2980b9;
+      }
+
+      .delete-button {
+        background-color: #e74c3c;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        margin-top: 10px;
+        transition: background-color 0.3s ease;
+      }
+
+      .delete-button:hover {
+        background-color: #c0392b;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .container {
+          padding: 20px;
+        }
+
+        .product {
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+      }
+
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        .product {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Product Wishlist</h1>
+      <div id="productDetails" class="product"></div>
+      <div id="errorMessage" class="error"></div>
+    </div>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+      import { getDatabase, ref, get, remove } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDxdyyL_TF-A_99KRxlDdRgzRc6_mkDL-0",
+        authDomain: "casio-4ac93.firebaseapp.com",
+        projectId: "casio-4ac93",
+        storageBucket: "casio-4ac93.appspot.com",
+        messagingSenderId: "115949092498",
+        appId: "1:115949092498:web:d470d2d4a619c00f3eb04b",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
+
+      // Fetch and display products when the page loads
+      document.addEventListener("DOMContentLoaded", function () {
+        getAllUsers();
+      });
+
+      function getAllUsers() {
+        const usersRef = ref(db, "users");
+        get(usersRef)
+          .then((snapshot) => {
+            if (snapshot.exists()) {
+              displayProductData(snapshot.val());
+            } else {
+              console.log("No data available.");
+            }
+          })
+          .catch((error) => {
+            console.error("Error reading data:", error);
+          });
+      }
+
+      function displayProductData(products) {
+        const productDetails = document.getElementById("productDetails");
+        productDetails.innerHTML = "";
+
+        Object.keys(products).forEach((key) => {
+          const product = products[key];
+          const card = document.createElement("div");
+          card.classList.add("product-card");
+
+          card.innerHTML = `
+            <h2>${product.productName || "N/A"}</h2>
+            <div class="product-item">
+              <strong>Brand:</strong> ${product.brandDisp || "N/A"}
+            </div>
+            <div class="product-item">
+              <strong>Price:</strong> ${product.dispPrice || "N/A"}
+            </div>
+            <div class="product-item">
+              <strong>Category:</strong> ${product.productCategory || "N/A"}
+            </div>
+            <img src="${product.productAssets ? product.productAssets.path : "#"}" alt="${product.productName}">
+            <div class="price">₹ ${product.salePrice}</div>
+            <a href="${product.url || "#"}" target="_blank"><button class="button">View Product</button></a>
+            <button class="delete-button" data-id="${key}">Delete</button>
+          `;
+
+          productDetails.appendChild(card);
+
+          // Add event listener to the delete button
+          const deleteButton = card.querySelector(".delete-button");
+          deleteButton.addEventListener("click", function () {
+            deleteProduct(key);
+          });
+        });
+      }
+
+      function deleteProduct(productId) {
+        const productRef = ref(db, `users/${productId}`);
+        remove(productRef)
+          .then(() => {
+            console.log(`Product with ID ${productId} deleted successfully.`);
+            getAllUsers(); // Refresh the product list
+          })
+          .catch((error) => {
+            console.error("Error deleting product:", error);
+          });
+      }
+    </script>
+  </body>
+</html>

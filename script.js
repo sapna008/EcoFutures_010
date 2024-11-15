@@ -277,3 +277,7 @@ function handleProfileDropdown(isHover) {
 function viewallitem(){
   window.location.href = "pages/viewall.html";
 }
+
+function wishlist(){
+  window.location.href = "./pages/wishlist.html";
+}
