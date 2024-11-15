@@ -11,11 +11,31 @@ const categoryPath = {
   printer: "Printing Calculators",
 };
 
+const categoryImgPath = {
+  practical:
+    "https://www.casio.com/content/casio/locales/in/en/products/basic-calculators/practical/_jcr_content/root/responsivegrid/teaser.casiocoreimg.jpeg/1661234220008/8-practical-cal-1920-612.jpeg",
+  check:
+    "https://www.casio.com/content/casio/locales/in/en/products/basic-calculators/check/_jcr_content/root/responsivegrid/teaser.casiocoreimg.jpeg/1661234220492/9-check-calculators-.jpeg",
+  "waterprotected-dustproof":
+    "https://www.casio.com/content/casio/locales/in/en/products/basic-calculators/waterprotected-dustproof/_jcr_content/root/responsivegrid/teaser.casiocoreimg.jpeg/1661234221801/13-water-protected-dust-proof-calculators.jpeg",
+  colorful:
+    "https://www.casio.com/content/casio/locales/in/en/products/basic-calculators/colorful/_jcr_content/root/responsivegrid/teaser.casiocoreimg.jpeg/1661234221291/11-my-style-banner-1920-612.jpeg",
+  printer:
+    "https://www.casio.com/content/casio/locales/in/en/products/basic-calculators/printer/_jcr_content/root/responsivegrid/teaser_copy.casiocoreimg.jpeg/1657607413592/2109-printer-cal-banner.jpeg",
+};
+
+const heroImg = document.getElementById("hero-img");
+const params = new URLSearchParams(window.location.search);
+let path = params.get("subpath");
+
+if (path in categoryImgPath) {
+  heroImg.src = categoryImgPath[path];
+}
+
 function filterProducts(products) {
   const params = new URLSearchParams(window.location.search);
   let path = params.get("subpath");
   const category = categoryPath[path] || "";
-  console.log(category);
 
   if (category) {
     const filteredData = products.filter(
