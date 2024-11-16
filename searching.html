@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans min-h-screen flex items-center justify-center">
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Search Results</h1>
+
+        <div id="product-details" class="flex flex-col md:flex-row gap-6">
+            <!-- Product details will be dynamically populated -->
+        </div>
+    </div>
+
+    <script>
+        function displayProductDetails() {
+            const params = new URLSearchParams(window.location.search);
+            const productName = params.get('productName');
+            const imagePath = params.get('imagePath');
+            const secondImagePath = params.get('secondImagePath');
+            const brandDisp = params.get('brandDisp');
+            const productCategory = params.get('productCategory');
+            const salePrice = params.get('salePrice');
+
+            const productDetailsDiv = document.getElementById('product-details');
+
+            if (productName && imagePath) {
+                productDetailsDiv.innerHTML = `
+                    <div class="w-full md:w-1/2 flex flex-col items-center justify-center">
+                        <!-- First Image -->
+                        <img src="${imagePath}" alt="${productName}" 
+                             class="w-full h-[500px] object-contain rounded-lg shadow-lg">
+
+                        <!-- Second Image -->
+                        ${secondImagePath ? `
+                            <img src="${secondImagePath}" alt="${productName}" 
+                                 class="w-full h-[500px] object-contain rounded-lg shadow-lg mt-4 md:mt-0">
+                        ` : ''}
+                    </div>
+
+                    <div class="w-full md:w-1/2 flex flex-col justify-center">
+                        <h2 class="text-5xl font-bold text-gray-800 mb-4">${productName}</h2>
+                        <p class="text-gray-600 mb-2"><strong>Brand:</strong> ${brandDisp || 'N/A'}</p>
+                        <p class="text-gray-600 mb-2"><strong>Category:</strong> ${productCategory || 'N/A'}</p>
+                        <p class="text-gray-600 mb-6"><strong>Sale Price:</strong> ₹${salePrice || 'N/A'}</p>
+                        <button  onclick="redirectToBuy()" class="bg-black text-white text-lg px-8 py-4 rounded-lg hover:bg-gray-800 transition duration-200">
+                            Buy Now
+                        </button>
+                    </div>
+                `;
+            } else {
+                productDetailsDiv.innerHTML = `
+                    <p class="text-gray-700 text-center">No product details found.</p>
+                `;
+            }
+        }
+
+        displayProductDetails();
+
+        //payment
+        function redirectToBuy() {
+        const params = new URLSearchParams(window.location.search);
+        const buyUrl = `buy.html?${params.toString()}`;
+        window.location.href = buyUrl;
+    }
+    </script>
+</body>
+</html>

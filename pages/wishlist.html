@@ -154,6 +154,7 @@
     </div>
 
     <script type="module">
+      const baseUrl = "https://www.casio.com";
       import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
       import { getDatabase, ref, get, remove } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
 
@@ -175,7 +176,7 @@
       });
 
       function getAllUsers() {
-        const usersRef = ref(db, "users");
+        const usersRef = ref(db, "wishlist");
         get(usersRef)
           .then((snapshot) => {
             if (snapshot.exists()) {
@@ -200,6 +201,7 @@
 
           card.innerHTML = `
             <h2>${product.productName || "N/A"}</h2>
+            <img src="${product.productAssets ? baseUrl+product.productAssets.path : "#"}" alt="${product.productName}">
             <div class="product-item">
               <strong>Brand:</strong> ${product.brandDisp || "N/A"}
             </div>
@@ -209,7 +211,7 @@
             <div class="product-item">
               <strong>Category:</strong> ${product.productCategory || "N/A"}
             </div>
-            <img src="${product.productAssets ? product.productAssets.path : "#"}" alt="${product.productName}">
+
             <div class="price">₹ ${product.salePrice}</div>
             <a href="${product.url || "#"}" target="_blank"><button class="button">View Product</button></a>
             <button class="delete-button" data-id="${key}">Delete</button>
@@ -226,7 +228,7 @@
       }
 
       function deleteProduct(productId) {
-        const productRef = ref(db, `users/${productId}`);
+        const productRef = ref(db, `wishlist/${productId}`);
         remove(productRef)
           .then(() => {
             console.log(`Product with ID ${productId} deleted successfully.`);
