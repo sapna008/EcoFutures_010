@@ -6,10 +6,7 @@
     <title>Basic Calculators</title>
     <link rel="stylesheet" href="../../globalStyle.css" />
     <link rel="stylesheet" href="../../styles/calculator/calculator.css" />
-    <link
-      rel="stylesheet"
-      href="../../styles/calculator/basicCalculatorCategory.css"
-    />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -29,6 +26,20 @@
         <li class="prod-nav-item"><a href="">Services </a></li>
         <li class="prod-nav-item"><a href="">Old Models </a></li>
         <li class="prod-nav-item"><a href="">Support</a></li>
+      </ul>
+      <div id="prod-nav-menu">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+
+    <div id="prod-nav-mobile">
+      <h2 class="prod-nav-mobile-head">Basic Calculators</h2>
+      <i id="cross" class="fa-solid fa-x"></i>
+      <ul class="prod-nav-mobile-items">
+        <li class="prod-nav-mobile-item"><a href="">Catalog </a></li>
+        <li class="prod-nav-mobile-item"><a href="">Services </a></li>
+        <li class="prod-nav-mobile-item"><a href="">Old Models </a></li>
+        <li class="prod-nav-mobile-item"><a href="">Support</a></li>
       </ul>
     </div>
     <div class="category-nav">
@@ -67,49 +78,176 @@
 
     <div class="container">
       <div id="left-filters-cont">
-        <!-- <div
-          class="cmp-filter-sort__items cmp-filter-sort__sec-hdg--hide-in-mobile"
-        >
-          <label for="newest" class="c-radio">
-            <input type="radio" name="sortBy" value="newest" id="newest" /><span
-              >Newest</span
+        <div class="filter-cont">
+          <!-- Sort -->
+          <div
+            class="sortCont"
+            id="sortByFilterOption"
+            data-default-sort="noSort"
+          >
+            <div class="sortHead">Sort</div>
+            <div class="sortItems">
+              <label for="newest" class="c-radio">
+                <input
+                  type="radio"
+                  name="sortBy"
+                  value="newest"
+                  id="newest"
+                /><span>Newest</span>
+              </label>
+
+              <label for="priceHighLow" class="c-radio">
+                <input
+                  type="radio"
+                  name="sortBy"
+                  value="priceHighLow"
+                  id="priceHighLow"
+                /><span>Price:High-Low</span>
+              </label>
+              <label for="priceLowHigh" class="c-radio">
+                <input
+                  type="radio"
+                  name="sortBy"
+                  value="priceLowHigh"
+                  id="priceLowHigh"
+                /><span>Price:Low-High</span>
+              </label>
+
+              <label for="weightHeavyLight" class="c-radio">
+                <input
+                  type="radio"
+                  name="sortBy"
+                  value="weightHeavyLight"
+                  id="weightHeavyLight"
+                /><span>Weight:Heavy-Light</span>
+              </label>
+              <label for="weightLightHeavy" class="c-radio">
+                <input
+                  type="radio"
+                  name="sortBy"
+                  value="weightLightHeavy"
+                  id="weightLightHeavy"
+                /><span>Weight:Light-Heavy</span>
+              </label>
+            </div>
+          </div>
+          <!-- Power Filter -->
+          <div class="filter-category">
+            <div class="filter-header" onclick="toggleSection('power')">
+              <span>Power</span>
+              <i id="power-icon" class="fas fa-plus"></i>
+            </div>
+            <div id="power-options" class="filter-options hidden">
+              <button class="filter-button">Solar-Powered</button>
+            </div>
+          </div>
+          <!-- Digits -->
+          <div class="filter-category">
+            <div class="filter-header" onclick="toggleSection('digits')">
+              <span>Digits</span>
+              <i id="digits-icon" class="fas fa-plus"></i>
+            </div>
+            <div id="digits-options" class="filter-options hidden">
+              <button class="filter-button">14 digits</button>
+              <button class="filter-button">12 digits</button>
+              <button class="filter-button">10 digits</button>
+              <button class="filter-button">8 digits</button>
+            </div>
+          </div>
+          <!-- Price filter -->
+          <div class="filter-category">
+            <div class="filter-header" onclick="toggleSection('prices')">
+              <span>Price Range</span>
+              <i id="prices-icon" class="fas fa-plus"></i>
+            </div>
+            <div
+              id="prices-options"
+              class="filter-options hidden price-checkboxes"
             >
-          </label>
-
-          <label for="priceHighLow" class="c-radio">
-            <input
-              type="radio"
-              name="sortBy"
-              value="priceHighLow"
-              id="priceHighLow"
-            /><span>Price:High-Low</span>
-          </label>
-          <label for="priceLowHigh" class="c-radio">
-            <input
-              type="radio"
-              name="sortBy"
-              value="priceLowHigh"
-              id="priceLowHigh"
-            /><span>Price:Low-High</span>
-          </label>
-
-          <label for="weightHeavyLight" class="c-radio">
-            <input
-              type="radio"
-              name="sortBy"
-              value="weightHeavyLight"
-              id="weightHeavyLight"
-            /><span>Weight:Heavy-Light</span>
-          </label>
-          <label for="weightLightHeavy" class="c-radio">
-            <input
-              type="radio"
-              name="sortBy"
-              value="weightLightHeavy"
-              id="weightLightHeavy"
-            /><span>Weight:Light-Heavy</span>
-          </label>
-        </div> -->
+              <label class="price-checkbox"
+                ><input type="checkbox" /> Below ₹500
+              </label>
+              <label class="price-checkbox"
+                ><input type="checkbox" /> ₹500 - ₹1000
+              </label>
+              <label class="price-checkbox"
+                ><input type="checkbox" /> ₹1000 - ₹2000
+              </label>
+              <label class="price-checkbox"
+                ><input type="checkbox" /> Above ₹2000
+              </label>
+            </div>
+          </div>
+          <!-- Color -->
+          <div class="filter-category">
+            <div class="filter-header" onclick="toggleSection('color')">
+              <span>Colors</span>
+              <i id="color-icon" class="fas fa-plus"></i>
+            </div>
+            <div id="color-options" class="filter-options hidden">
+              <button
+                class="color-button"
+                style="background-color: black"
+              ></button>
+              <button
+                class="color-button"
+                style="background-color: white"
+              ></button>
+              <button
+                class="color-button"
+                style="background-color: red"
+              ></button>
+              <button
+                class="color-button"
+                style="background-color: rgb(7, 152, 255)"
+              ></button>
+              <button
+                class="color-button"
+                style="background-color: green"
+              ></button>
+              <button
+                class="color-button"
+                style="background-color: orange"
+              ></button>
+              <button
+                class="color-button"
+                style="background-color: pink"
+              ></button>
+            </div>
+          </div>
+          <!-- Series -->
+          <div class="filter-category">
+            <div class="filter-header" onclick="toggleSection('series')">
+              <span>Series</span>
+              <i id="series-icon" class="fas fa-plus"></i>
+            </div>
+            <div id="series-options" class="filter-options hidden">
+              <button class="filter-button">Practical Calculators</button>
+              <button class="filter-button">Check Calculators</button>
+              <button class="filter-button">Check Calculators</button>
+              <button class="filter-button">Colorful Calculators</button>
+              <button class="filter-button">Prinitng Calculators</button>
+            </div>
+          </div>
+          <!-- Type -->
+          <div class="filter-category">
+            <div class="filter-header" onclick="toggleSection('type')">
+              <span>Type</span>
+              <i id="type-icon" class="fas fa-plus"></i>
+            </div>
+            <div id="type-options" class="filter-options hidden">
+              <button class="filter-button">Compact Desk Type</button>
+              <button class="filter-button">Desktop Type</button>
+              <button class="filter-button">Dual Leaf Type</button>
+              <button class="filter-button">Mini Desk Type</button>
+              <button class="filter-button">Portable Type</button>
+              <button class="filter-button">Water Proof Type</button>
+            </div>
+          </div>
+        </div>
+        <div class="clear-button">
+          <button>Clear</button>
+        </div>
       </div>
       <div id="right-products-cont">
         <!-- Products card will be displayed here -->
@@ -119,6 +257,21 @@
     <script
       type="module"
       src="../../script/calculator/basicCalculatorCategory.mjs"
+      defer
     ></script>
+    <script>
+      function toggleSection(section) {
+        const options = document.getElementById(`${section}-options`);
+        const icon = document.getElementById(`${section}-icon`);
+        options.classList.toggle("hidden");
+        if (options.classList.contains("hidden")) {
+          icon.classList.remove("fa-minus");
+          icon.classList.add("fa-plus");
+        } else {
+          icon.classList.remove("fa-plus");
+          icon.classList.add("fa-minus");
+        }
+      }
+    </script>
   </body>
 </html>

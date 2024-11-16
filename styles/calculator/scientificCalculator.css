@@ -1,0 +1,4 @@
+.category-nav-item:nth-child(1) {
+  font-weight: 700;
+  border-bottom: 4px solid black;
+}
