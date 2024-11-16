@@ -39,7 +39,8 @@
     /* height: 100vh; */
     height: calc(100vh - 140px);
      /* Adjusted for navbar */
-    position: fixed;
+     position: fixed;
+    /* position: sticky; */
     top: 80px; /* Adjusted for navbar */
     left: 10px;
     bottom: 100px;
@@ -84,13 +85,14 @@
 
 /* Styling for product cards container */
 .cards-container {
+    width: 700em;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
     padding: 20px;
     flex-grow: 1;
-    margin-left: 22em; /* Adjusted for sidebar width */
+    margin-left: 2em; /* Adjusted for sidebar width */
 }
 
 /* Individual product card styling */
@@ -107,7 +109,7 @@
 }
 
 .card1 {
-    width: 150px;
+    width: 170px;
     padding: 5px;
     background-color: whitesmoke;
     margin: 0 auto;
@@ -116,6 +118,7 @@
 .card-image {
     width: 100%;
     height: auto;
+    padding: 1em;
     margin-bottom: 10px;
 }
 
@@ -144,6 +147,14 @@
     font-size: 14px;
     color: #888;
     margin-bottom: 8px;
+}
+.filled {
+    color: red;
+  }
+  
+#labeldiv{
+    display :flex;
+    justify-content: space-between;
 }
 
 .mrp-label {
@@ -330,10 +341,12 @@ category-options button{
     background-color: #e0e0e0;
 }
 footer {
+    margin-top: 1em;
 background-color: #ffffff;
 padding: 40px ;
 display: flex;
 padding-left: 20%;
+position: absolute;
 }
 .footer-container {
 max-width:  1300px;
@@ -414,3 +427,210 @@ text-decoration: none;
 
 
 
+.empty-bag {
+    text-align: center;
+    margin-top: 11em;
+    color: #666;
+}
+
+.empty-bag-icon {
+    font-size: 100px;
+    color: #ccc;
+    margin-bottom: 10px;
+    animation: rotateBag 2s infinite;
+}
+
+@keyframes rotateBag {
+    0% {
+        transform: rotate(0deg);
+        color: #ccc;
+    }
+    28% {
+        transform: rotate(100deg);
+        color: red;
+    }
+    100% {
+        transform: rotate(360deg);
+        color: #ccc;
+    }
+}
+
+
+.empty-bag-text {
+    font-size: 20px;
+    margin-top: 17px;
+    animation: textColorChange 2s infinite;
+    color: #ccc;
+}
+
+
+@keyframes textColorChange {
+    0% {
+        transform: translateY(0) scale(1);
+        color: #ccc; /* Text is gray when the bag is gray */
+    }
+    28% {
+        transform: translateY(-17px) scale(1.4);
+        color: rgb(228, 160, 160); /* Text turns red when the bag turns red */
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        color: #ccc; /* Text returns to gray when the bag is gray */
+    }
+}
+
+
+
+.no-products {
+    text-align: center;
+    font-size: 1.2em;
+    color: gray;
+    padding: 50px;
+}
+
+.no-products p {
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: #666;
+}
+
+.no-products i {
+    font-size: 4em; /* Increase icon size */
+    margin-top: 20px;
+    display: block; /* Icons will be displayed on separate lines */
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 5s ease, color 1s ease;
+}
+
+.no-products i.fa-bag-shopping {
+   margin-left: 1.2em;
+   color: #6c6e71;
+   opacity: 0.1;
+   transition: color 2s ease; /* Smooth transition for color change */
+    animation: changeBagColor 2s ease 2s forwards;
+   
+}
+
+.no-products i.color-icon {
+    transition: color 1s ease;
+}
+
+.fa-solid.fa-fill-drip {
+    transition: transform 5s ease, opacity 1s ease;
+}
+
+.no-products .color-icon {
+    opacity: 0.5;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 4em; /* Icon size */
+    transition: opacity 1s ease; /* Smooth transition for opacity */
+    animation: fadeInOpacity 2s ease forwards; 
+}
+
+/* Animation for color icon */
+.no-products .color-icon.rotating {
+    transform: rotate(360deg);
+}
+
+.no-products i.color-icon {
+    color: #000; /* Default black color */
+}
+
+.no-products i.color-icon[data-color="red"] {
+    color: red; /* Color change for red */
+}
+
+.no-products i.color-icon[data-color="blue"] {
+    color: blue; /* Color change for blue */
+}
+
+/* Add more color rules for other colors as needed */
+
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0.5; 
+    }
+    100% {
+        opacity: 1; 
+    }
+}
+
+
+@keyframes changeBagColor {
+    0% {
+        color: gray; /* Initial color */
+    }
+    100% {
+        color: var(--selected-color); /* The selected color will be applied here */
+    }
+}
+
+
+
+#top-img {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Adjust the height as needed */
+    overflow: hidden;
+}
+
+#top-img img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#top-img img.active {
+    opacity: 1;
+}
+
+
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%; /* Allow full width for better responsiveness */
+  position: relative;
+  padding-bottom: 56.25%;  /* This creates a 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Make the iframe fill the container */
+  height: 100%; /* Ensure the iframe has the correct aspect ratio */
+}
+
+.scroll-container {
+    scroll-behavior: smooth;
+   } 
+
+
+   .sidebar {
+    width:200em;
+    padding: 2em;
+    border-right: 1px solid #ddd;
+    background-color: #f8f8f8;
+    overflow-y: auto;
+    /* height: 100vh; */
+    height: calc(100vh - 150px);
+     /* Adjusted for navbar */
+     position: sticky;
+    /* position: sticky; */
+    /* top: 100px;  */
+    /* Adjusted for navbar */
+    /* left: 10px; */
+    bottom: 0;
+
+}

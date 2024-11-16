@@ -6,6 +6,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
     <link rel="stylesheet" href="music.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
 
 </head>
@@ -22,6 +23,374 @@
     <a href="#">Casiotone Mini Keyboards</a>
     <a href="#">Others</a>
 </div>
+
+<!-- <div>
+    <nav class="bg-white border-none shadow-md">
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex justify-between items-center">
+          <div class="flex justify-center items-center gap-4">
+            <div
+              class="xl:hidden md:block sm:block hamburger w-[24px] h-[24px] cursor-pointer"
+              id="hamburger"
+            >
+              <img
+                class="w-full h-full"
+                src="https://img.icons8.com/?size=100&id=36389&format=png&color=000000"
+                alt=""
+              />
+            </div>
+
+            <a href="#" class="flex items-center">
+              <img
+                src="./LOGO.svg"
+                class="w-[65px] h-[17px]"
+                alt="Casio Logo"
+              />
+            </a>
+          </div>
+
+          <div class="hidden xl:block">
+            <div class="flex space-x-8 text-[14px] font-semibold relative">
+              <div
+                class="group relative border-b-2 border-transparent hover:border-[#000000] pt-4 pb-3 transition-all duration-300"
+                onmouseover="showDropdown('watches')"
+                onmouseout="hideDropdown()"
+                onclick="changePage('Watches')"
+              >
+                <a href="" class="text-[#2c3042]">
+                  Watches
+                </a>
+              </div>
+              <div
+                class="group relative border-b-2 border-transparent hover:border-[#000000] pt-4 pb-3 transition-all duration-300"
+                onmouseover="showDropdown('calculator')"
+                onmouseout="hideDropdown()"
+                onclick="changePage('Watches')"
+              >
+                <a href="" class="text-[#2c3042]">
+                  Electronic Musical Instruments
+                </a>
+              </div>
+              <div
+                class="group relative border-b-2 border-transparent hover:border-[#000000] pt-4 pb-3 transition-all duration-300"
+                onmouseover="showDropdown('instruments')"
+                onmouseout="hideDropdown()"
+                onclick="changePage('Watches')"
+              >
+                <a href="" class="text-[#2c3042]">
+                  Calculators
+                </a>
+              </div>
+              <div
+                class="group relative border-b-2 border-transparent hover:border-[#000000] pt-4 pb-3 transition-all duration-300"
+                onmouseover="showDropdown('other')"
+                onmouseout="hideDropdown()"
+                onclick="changePage('Watches')"
+              >
+                <a href="" class="text-[#2c3042]">
+                  Label Printers & Others
+                </a>
+              </div>
+              <div
+                id="hoverDropdown"
+                class="absolute z-20 bg-white-900 hidden shadow-[inset 0 0 8px rgba(0, 0, 0, 1)] w-[70rem] h-[20rem] bg-white shadow-lg top-full left-0 right-0 transform -translate-x-[5rem] my-0 mx-auto transition-all duration-300 ease-in-out opacity-0"
+              >
+                <div class="p-4 bg-white">
+                  <div id="hoverContent">Hover Content</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-8">
+            <div
+              class="relative lg:flex hidden items-center bg-white rounded-full border-b-2"
+            >
+              <input
+                type="text"
+                placeholder="Search...."
+                class="bg-transparent px-4 py-2 w-[200px] text-sm focus:outline-none"
+              />
+              <img
+                src="https://img.icons8.com/?size=100&id=132&format=png&color=000000"
+                class="w-5 h-5 ml-3"
+                alt="Search Icon"
+              />
+            </div>
+
+            <div class="flex items-center gap-6 relative">
+              <div
+                class="flex flex-col items-center cursor-pointer border-b-4 border-transparent"
+              >
+
+                <img
+                  src="https://img.icons8.com/?size=100&id=87&format=png&color=000000"
+                  class="w-5"
+                  alt="Wishlist"
+                  onclick="wishlist()"
+                />
+                <span class="text-xs hidden lg:block xl:block"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div> -->
+
+
+<div id="top-img">
+    <img src="https://www.casio.com/content/casio/locales/in/en/products/electronic-musical-instruments/_jcr_content/root/responsivegrid/carousel/item_1724306443064.casiocoreimg.jpeg/1731499649238/desktop-home-page-indian-1920x816.jpeg" alt="1">
+    <img src="https://www.casio.com/content/casio/locales/in/en/products/electronic-musical-instruments/_jcr_content/root/responsivegrid/carousel/item_1724306444423.casiocoreimg.jpeg/1731499776239/desktop-home-page-piano-1920x816.jpeg" alt="2">
+    <img src="https://www.casio.com/content/casio/locales/in/en/products/electronic-musical-instruments/_jcr_content/root/responsivegrid/carousel/item_1724306446155.casiocoreimg.jpeg/1731500861614/desktop-home-page-mini-1920x816.jpeg" alt="3">
+    <img src="https://www.casio.com/content/casio/locales/in/en/products/electronic-musical-instruments/_jcr_content/root/responsivegrid/carousel/item_1724306441605.casiocoreimg.jpeg/1731499510755/desktop-home-page-casiotone-1920x816-copy-2.jpeg" alt="">
+</div>
+
+
+<div class="video-container">
+    <iframe 
+      width="560" 
+      height="315" 
+      src="https://www.youtube.com/embed/6puXkYmtMVo" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+  </div>
+  
+
+
+
+  <div class="container mx-auto py-8 relative" id="slide1">
+    <div class="flex space-x-4 overflow-x-auto scroll-container" id="scrollContainer">
+     <!-- Kids Keyboard -->
+     <div class="relative flex-shrink-0 w-80">
+      <img alt="Child playing with a kids keyboard" class="w-full h-auto" height="500" src="https://www.casio.com/content/casio/locales/in/en/products/electronic-musical-instruments/_jcr_content/root/responsivegrid/container_copy/container/content_panel_list/content_panel_202112_1772176409/image.casiocoreimg.jpeg/1725266671347/kids-keyboard-686x686.jpeg" width="400"/>
+      <div class="bg-black bg-opacity-75 text-white p-4 h-24 flex items-center">
+       <span>
+        Kids Keyboard
+       </span>
+       <i class="fas fa-external-link-alt ml-2">
+       </i>
+      </div>
+     </div>
+     <!-- Beginner Keyboard -->
+     <div class="relative flex-shrink-0 w-80">
+      <img alt="Person playing a beginner keyboard" class="w-full h-auto" height="500" src="https://www.casio.com/content/casio/locales/in/en/products/electronic-musical-instruments/_jcr_content/root/responsivegrid/container_copy/container/content_panel_list/content_panel_202206291519014480/image.casiocoreimg.jpeg/1731584144907/ct-s-.jpeg" width="400"/>
+      <div class="bg-black bg-opacity-75 text-white p-4 h-24 flex items-center">
+       <span>
+        Beginner Keyboard
+       </span>
+       <i class="fas fa-external-link-alt ml-2">
+       </i>
+      </div>
+     </div>
+     <!-- Intermediate Keyboard -->
+     <div class="relative flex-shrink-0 w-80">
+      <img alt="Group of people playing an intermediate keyboard" class="w-full h-auto" height="500" src="https://www.casio.com/content/casio/locales/in/en/products/electronic-musical-instruments/_jcr_content/root/responsivegrid/container_copy/container/content_panel_list/content_panel_202201_1122300785/image.casiocoreimg.jpeg/1731584160983/ct-s1.jpeg" width="400"/>
+      <div class="bg-black bg-opacity-75 text-white p-4 h-24 flex items-center">
+       <span>
+        Intermediate Keyboard
+       </span>
+       <i class="fas fa-external-link-alt ml-2">
+       </i>
+      </div>
+     </div>
+     <!-- Advanced Keyboards -->
+     <div class="relative flex-shrink-0 w-80">
+      <img alt="Person playing an advanced keyboard" class="w-full h-auto" height="500" src="https://www.casio.com/content/casio/locales/in/en/products/electronic-musical-instruments/_jcr_content/root/responsivegrid/container_copy/container/content_panel_list/content_panel/image.casiocoreimg.jpeg/1725266580305/advanced-keyboards-686x686.jpeg" width="400"/>
+      <div class="bg-black bg-opacity-75 text-white p-4 h-24 flex items-center">
+       <span>
+        Advanced Keyboards
+       </span>
+       <i class="fas fa-external-link-alt ml-2">
+       </i>
+      </div>
+     </div>
+     <!-- Digital Pianos -->
+     <div class="relative flex-shrink-0 w-80">
+      <img alt="Person playing a digital piano" class="w-full h-auto" height="500" src="https://www.casio.com/content/casio/locales/in/en/products/electronic-musical-instruments/_jcr_content/root/responsivegrid/container_copy/container/content_panel_list/content_panel_202201_21578030/image.casiocoreimg.jpeg/1725266820904/digital-pianos-686x686.jpeg" width="400"/>
+      <div class="bg-black bg-opacity-75 text-white p-4 h-24 flex items-center">
+       <span>
+        Digital Pianos
+       </span>
+       <i class="fas fa-external-link-alt ml-2">
+       </i>
+      </div>
+     </div>
+     <!-- Apps -->
+     <div class="relative flex-shrink-0 w-80">
+      <img alt="Person using a music app" class="w-full h-auto" height="500" src="https://www.casio.com/content/casio/locales/in/en/products/electronic-musical-instruments/_jcr_content/root/responsivegrid/container_copy/container/content_panel_list/content_panel_202201_1352628551/image.casiocoreimg.jpeg/1680507504766/apps-20220323.jpeg" width="400"/>
+      <div class="bg-black bg-opacity-75 text-white p-4 h-24 flex items-center">
+       <span>
+        Music Apps
+       </span>
+       <i class="fas fa-external-link-alt ml-2">
+       </i>
+      </div>
+     </div>
+    </div>
+    <!-- Navigation Buttons -->
+    <button class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white p-2" id="prevButton">
+     <i class="fas fa-chevron-left">
+     </i>
+    </button>
+    <button class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white p-2" id="nextButton">
+     <i class="fas fa-chevron-right">
+     </i>
+    </button>
+   </div>
+
+
+
+   <!-- <nav class="bg-white shadow-md p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="text-xl font-bold">Brand</div>
+        <div class="flex space-x-4">
+            <div class="relative">
+                <button class="flex items-center space-x-2 py-2 px-4 bg-gray-200 rounded hover:bg-gray-300 transition duration-300" onclick="toggleSection('sort')">
+                    <span>Sort</span>
+                    <i id="sort-icon" class="fas fa-plus"></i>
+                </button>
+                <div id="sort-options" class="hidden absolute bg-white shadow-md mt-2 p-4 rounded custom-scrollbar w-48 z-10 dropdown-enter">
+                    <div class="flex items-center mb-2">
+                        <input type="radio" id="newest" name="sort" class="mr-2">
+                        <label for="newest">Newest</label>
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <input type="radio" id="price-high-low" name="sort" class="mr-2">
+                        <label for="price-high-low">Price: High-Low</label>
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <input type="radio" id="price-low-high" name="sort" class="mr-2">
+                        <label for="price-low-high">Price: Low-High</label>
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <input type="radio" id="weight-heavy-light" name="sort" class="mr-2">
+                        <label for="weight-heavy-light">Weight: Heavy-Light</label>
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <input type="radio" id="weight-light-heavy" name="sort" class="mr-2">
+                        <label for="weight-light-heavy">Weight: Light-Heavy</label>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <button class="flex items-center space-x-2 py-2 px-4 bg-gray-200 rounded hover:bg-gray-300 transition duration-300" onclick="toggleSection('category')">
+                    <span>Category</span>
+                    <i id="category-icon" class="fas fa-plus"></i>
+                </button>
+                <div id="category-options" class="hidden absolute bg-white shadow-md mt-2 p-4 rounded custom-scrollbar w-48 z-10 dropdown-enter">
+                    <button id="digital-piano" class="block w-full text-left px-2 py-1 bg-gray-100 rounded mb-2 hover:bg-gray-200 transition duration-300">Digital Piano</button>
+                    <button id="digital-keyboard" class="block w-full text-left px-2 py-1 bg-gray-100 rounded hover:bg-gray-200 transition duration-300">Digital Keyboard</button>
+                </div>
+            </div>
+            <div class="relative">
+                <button class="flex items-center space-x-2 py-2 px-4 bg-gray-200 rounded hover:bg-gray-300 transition duration-300" onclick="toggleSection('keys')">
+                    <span>Number of Keys</span>
+                    <i id="keys-icon" class="fas fa-plus"></i>
+                </button>
+                <div id="keys-options" class="hidden absolute bg-white shadow-md mt-2 p-4 rounded custom-scrollbar w-48 z-10 dropdown-enter">
+                    <button class="block w-full text-left px-2 py-1 bg-gray-100 rounded mb-2 hover:bg-gray-200 transition duration-300" onclick="filterByKeys(61)">61 keys</button>
+                    <button class="block w-full text-left px-2 py-1 bg-gray-100 rounded mb-2 hover:bg-gray-200 transition duration-300" onclick="filterByKeys(12)">12 keys</button>
+                    <button class="block w-full text-left px-2 py-1 bg-gray-100 rounded mb-2 hover:bg-gray-200 transition duration-300" onclick="filterByKeys(31)">31 keys</button>
+                    <button class="block w-full text-left px-2 py-1 bg-gray-100 rounded mb-2 hover:bg-gray-200 transition duration-300" onclick="filterByKeys(41)">41 keys</button>
+                    <button class="block w-full text-left px-2 py-1 bg-gray-100 rounded mb-2 hover:bg-gray-200 transition duration-300" onclick="filterByKeys(15)">15 keys</button>
+                    <button class="block w-full text-left px-2 py-1 bg-gray-100 rounded hover:bg-gray-200 transition duration-300" onclick="filterByKeys(45)">45 keys</button>
+                </div>
+            </div>
+            <div class="relative">
+                <button class="flex items-center space-x-2 py-2 px-4 bg-gray-200 rounded hover:bg-gray-300 transition duration-300" onclick="toggleSection('price')">
+                    <span>Price Range</span>
+                    <i id="price-icon" class="fas fa-plus"></i>
+                </button>
+                <div id="price-options" class="hidden absolute bg-white shadow-md mt-2 p-4 rounded custom-scrollbar w-48 z-10 dropdown-enter">
+                    <label class="block mb-2 hover:bg-gray-200 transition duration-300"><input type="checkbox" onclick="filterByPrice(event)"> Below ₹5000 <span>7</span></label>
+                    <label class="block mb-2 hover:bg-gray-200 transition duration-300"><input type="checkbox" onclick="filterByPrice(event)"> ₹5000 - ₹10000 <span>7</span></label>
+                    <label class="block mb-2 hover:bg-gray-200 transition duration-300"><input type="checkbox" onclick="filterByPrice(event)"> ₹10000 - ₹20000 <span>8</span></label>
+                    <label class="block mb-2 hover:bg-gray-200 transition duration-300"><input type="checkbox" onclick="filterByPrice(event)"> ₹20000 - ₹30000 <span>7</span></label>
+                    <label class="block mb-2 hover:bg-gray-200 transition duration-300"><input type="checkbox" onclick="filterByPrice(event)"> ₹30000 - ₹40000 <span>7</span></label>
+                    <label class="block mb-2 hover:bg-gray-200 transition duration-300"><input type="checkbox" onclick="filterByPrice(event)"> ₹40000 - ₹50000 <span>9</span></label>
+                    <label class="block hover:bg-gray-200 transition duration-300"><input type="checkbox" onclick="filterByPrice(event)"> Above ₹50000 <span>10</span></label>
+                </div>
+            </div>
+            <div class="relative">
+                <button class="flex items-center space-x-2 py-2 px-4 bg-gray-200 rounded hover:bg-gray-300 transition duration-300" onclick="toggleSection('rhythms')">
+                    <span>Rhythms / Pattern</span>
+                    <i id="rhythms-icon" class="fas fa-plus"></i>
+                </button>
+                <div id="rhythms-options" class="hidden absolute bg-white shadow-md mt-2 p-4 rounded custom-scrollbar w-48 z-10 dropdown-enter">
+                    <button class="block w-full text-left px-2 py-1 bg-gray-100 rounded mb-2 hover:bg-gray-200 transition duration-300" onclick="filterByRhythms(250)">250</button>
+                    <button class="block w-full text-left px-2 py-1 bg-gray-100 rounded mb-2 hover:bg-gray-200 transition duration-300" onclick="filterByRhythms(210)">210</button>
+                    <button class="block w-full text-left px-2 py-1 bg-gray-100 rounded mb-2 hover:bg-gray-200 transition duration-300" onclick="filterByRhythms(14)">14</button>
+                    <button class="block w-full text-left px-2 py-1 bg-gray-100 rounded mb-2 hover:bg-gray-200 transition duration-300" onclick="filterByRhythms(63)">63</button>
+                    <button class="block w-full text-left px-2 py-1 bg-gray-100 rounded mb-2 hover:bg-gray-200 transition duration-300" onclick="filterByRhythms(78)">78</button>
+                    <button class="block w-full text-left px-2 py-1 bg-gray-100 rounded mb-2 hover:bg-gray-200 transition duration-300" onclick="filterByRhythms(25)">25</button>
+                    <button class="block w-full text-left px-2 py-1 bg-gray-100 rounded hover:bg-gray-200 transition duration-300" onclick="filterByRhythms(36)">36</button>
+                </div>
+            </div>
+            <div class="relative">
+                <button class="flex items-center space-x-2 py-2 px-4 bg-gray-200 rounded hover:bg-gray-300 transition duration-300" onclick="toggleSection('polyphony')">
+                    <span>Max Polyphony</span>
+                    <i id="polyphony-icon" class="fas fa-plus"></i>
+                </button>
+                <div id="polyphony-options" class="hidden absolute bg-white shadow-md mt-2 p-4 rounded custom-scrollbar w-48 z-10 dropdown-enter">
+                    <button class="block w-full text-left px-2 py-1 bg-gray-100 rounded mb-2 hover:bg-gray-200 transition duration-300" onclick="filterByPolyphony(120)">120</button>
+                    <button class="block w-full text-left px-2 py-1 bg-gray-100 rounded mb-2 hover:bg-gray-200 transition duration-300" onclick="filterByPolyphony(450)">450</button>
+                    <button class="block w-full text-left px-2 py-1 bg-gray-100 rounded mb-2 hover:bg-gray-200 transition duration-300" onclick="filterByPolyphony(630)">630</button>
+                    <button class="block w-full text-left px-2 py-1 bg-gray-100 rounded mb-2 hover:bg-gray-200 transition duration-300" onclick="filterByPolyphony(780)">780</button>
+                    <button class="block w-full text-left px-2 py-1 bg-gray-100 rounded mb-2 hover:bg-gray-200 transition duration-300" onclick="filterByPolyphony(12)">12</button>
+                    <button class="block w-full text-left px-2 py-1 bg-gray-100 rounded hover:bg-gray-200 transition duration-300" onclick="filterByPolyphony(25)">25</button>
+                </div>
+            </div>
+            <div class="relative">
+                <button class="flex items-center space-x-2 py-2 px-4 bg-gray-200 rounded hover:bg-gray-300 transition duration-300" onclick="toggleSection('functions')">
+                    <span>Functions</span>
+                    <i id="functions-icon" class="fas fa-plus"></i>
+                </button>
+                <div id="functions-options" class="hidden absolute bg-white shadow-md mt-2 p-4 rounded custom-scrollbar w-48 z-10 dropdown-enter">
+                    <button class="block w-full text-left px-2 py-1 bg-gray-100 rounded mb-2 hover:bg-gray-200 transition duration-300" onclick="filterByFunction('Connection to App')">Connection to APP</button>
+                    <button class="block w-full text-left px-2 py-1 bg-gray-100 rounded mb-2 hover:bg-gray-200 transition duration-300" onclick="filterByFunction('LCD Display')">LCD Display</button>
+                    <button class="block w-full text-left px-2 py-1 bg-gray-100 rounded hover:bg-gray-200 transition duration-300" onclick="filterByFunction('Dance Music Mode')">Dance Music Mode</button>
+                </div>
+            </div>
+            <div class="relative">
+                <button class="flex items-center space-x-2 py-2 px-4 bg-gray-200 rounded hover:bg-gray-300 transition duration-300" onclick="toggleSection('brand')">
+                    <span>Brand</span>
+                    <i id="brand-icon" class="fas fa-plus"></i>
+                </button>
+                <div id="brand-options" class="hidden absolute bg-white shadow-md mt-2 p-4 rounded custom-scrollbar w-48 z-10 dropdown-enter">
+                    <button id="celviano-grand-hybrid" class="block w-full text-left px-2 py-1 bg-gray-100 rounded mb-2 hover:bg-gray-200 transition duration-300">CELVIANO Grand Hybrid</button>
+                    <button id="celviano" class="block w-full text-left px-2 py-1 bg-gray-100 rounded mb-2 hover:bg-gray-200 transition duration-300">CELVIANO</button>
+                    <button id="privia" class="block w-full text-left px-2 py-1 bg-gray-100 rounded mb-2 hover:bg-gray-200 transition duration-300">Privia</button>
+                    <button id="cdp" class="block w-full text-left px-2 py-1 bg-gray-100 rounded mb-2 hover:bg-gray-200 transition duration-300">CDP</button>
+                    <button id="ct-x" class="block w-full text-left px-2 py-1 bg-gray-100 rounded mb-2 hover:bg-gray-200 transition duration-300">CT-X</button>
+                    <button id="casiotone" class="block w-full text-left px-2 py-1 bg-gray-100 rounded mb-2 hover:bg-gray-200 transition duration-300">Casiotone</button>
+                    <button id="mini-keyboard" class="block w-full text-left px-2 py-1 bg-gray-100 rounded hover:bg-gray-200 transition duration-300">Mini Keyboard</button>
+                </div>
+            </div>
+            <div class="relative">
+                <button class="flex items-center space-x-2 py-2 px-4 bg-gray-200 rounded hover:bg-gray-300 transition duration-300" onclick="toggleSection('color')">
+                    <span>Color</span>
+                    <i id="color-icon" class="fas fa-plus"></i>
+                </button>
+                <div id="color-options" class="hidden absolute bg-white shadow-md mt-2 p-4 rounded custom-scrollbar w-48 z-10 dropdown-enter">
+                    <button class="block w-full h-6 mb-2 rounded hover:bg-gray-200 transition duration-300" style="background-color: black;" onclick="filterColor('black')"></button>
+                    <button class="block w-full h-6 mb-2 rounded hover:bg-gray-200 transition duration-300" style="background-color: white;" onclick="filterColor('white')"></button>
+                    <button class="block w-full h-6 mb-2 rounded hover:bg-gray-200 transition duration-300" style="background-color: red;" onclick="filterColor('red')"></button>
+                    <button class="block w-full h-6 mb-2 rounded hover:bg-gray-200 transition duration-300" style="background-color: blue;" onclick="filterColor('blue')"></button>
+                    <button class="block w-full h-6 mb-2 rounded hover:bg-gray-200 transition duration-300" style="background-color: green;" onclick="filterColor('green')"></button>
+                    <button class="block w-full h-6 mb-2 rounded hover:bg-gray-200 transition duration-300" style="background-color: yellow;" onclick="filterColor('yellow')"></button>
+                    <button class="block w-full h-6 rounded hover:bg-gray-200 transition duration-300" style="background-color: pink;" onclick="filterColor('pink')"></button>
+                </div>
+            </div>
+            <div>
+                <button id="clearButton" class="border border-gray-300 py-2 px-4 bg-gray-200 rounded hover:bg-gray-300 transition duration-300">Clear</button>
+            </div>
+        </div>
+    </div>
+</nav> -->
+
 
 <div class="container">
     <!-- Sidebar -->
@@ -49,7 +418,7 @@
                 <label for="weight-light-heavy">Weight:Light-Heavy</label>
             </div>
         </div>
-        <div class="border-t border-gray-300 py-2">
+        <!-- <div class="border-t border-gray-300 py-2">
             <div class="flex justify-between items-center cursor-pointer" onclick="toggleSection('category')">
                 <span>Category</span>
                 <i id="category-icon" class="fas fa-plus"></i>
@@ -58,19 +427,31 @@
                 <button class="block w-full text-left px-2 py-1" style="background-color: #d7dde4;text-align: center;">Digital Piano</button>
                 <button class="block w-full text-left px-2 py-1" style="background-color: #d7dde4; margin-top:0.5em ; text-align: center;">Digital Keyboard</button>
             </div>
+        </div> -->
+        <div class="border-t border-gray-300 py-2">
+            <div class="flex justify-between items-center cursor-pointer" onclick="toggleSection('category')">
+                <span>Category</span>
+                <i id="category-icon" class="fas fa-plus"></i>
+            </div>
+            <div id="category-options" class="hidden mt-2">
+                <button id="digital-piano" class="block w-full text-left px-2 py-1" style="background-color: #d7dde4; text-align: center;">Digital Piano</button>
+                <button id="digital-keyboard" class="block w-full text-left px-2 py-1" style="background-color: #d7dde4; margin-top:0.5em; text-align: center;">Digital Keyboard</button>
+
+            </div>
         </div>
+        
         <div class="border-t border-gray-300 py-2">
             <div class="flex justify-between items-center cursor-pointer" onclick="toggleSection('keys')">
                 <span>Number of Keys</span>
                 <i id="keys-icon" class="fas fa-plus"></i>
             </div>
             <div id="keys-options" class="hidden mt-2 keys-options">
-                <button>61 keys</button>
-                <button>12 keys</button>
-                <button>31 keys</button>
-                <button>41 keys</button>
-                <button>15 keys</button>
-                <button>45 keys</button>
+                <button onclick="filterByKeys(61)">61 keys</button>
+                <button onclick="filterByKeys(12)">12 keys</button>
+                <button onclick="filterByKeys(31)">31 keys</button>
+                <button onclick="filterByKeys(41)">41 keys</button>
+                <button onclick="filterByKeys(15)">15 keys</button>
+                <button onclick="filterByKeys(45)">45 keys</button>
             </div>
         </div>
         <div class="border-t border-gray-300 py-2">
@@ -79,14 +460,15 @@
                 <i id="price-icon" class="fas fa-plus"></i>
             </div>
             <div id="price-options" class="hidden mt-2 price-options">
-                <label><input type="checkbox"> Below ₹5000 <span>7</span></label>
-                <label><input type="checkbox"> ₹5000 - ₹10000 <span>7</span></label>
-                <label><input type="checkbox"> ₹10000 - ₹20000 <span>8</span></label>
-                <label><input type="checkbox"> ₹20000 - ₹30000 <span>7</span></label>
-                <label><input type="checkbox"> ₹30000 - ₹40000 <span>7</span></label>
-                <label><input type="checkbox"> ₹40000 - ₹50000 <span>9</span></label>
-                <label><input type="checkbox"> Above ₹50000 <span>10</span></label>
+                <label><input type="checkbox" onclick="filterByPrice(event)"> Below ₹5000 <span>7</span></label>
+                <label><input type="checkbox" onclick="filterByPrice(event)"> ₹5000 - ₹10000 <span>7</span></label>
+                <label><input type="checkbox" onclick="filterByPrice(event)"> ₹10000 - ₹20000 <span>8</span></label>
+                <label><input type="checkbox" onclick="filterByPrice(event)"> ₹20000 - ₹30000 <span>7</span></label>
+                <label><input type="checkbox" onclick="filterByPrice(event)"> ₹30000 - ₹40000 <span>7</span></label>
+                <label><input type="checkbox" onclick="filterByPrice(event)"> ₹40000 - ₹50000 <span>9</span></label>
+                <label><input type="checkbox" onclick="filterByPrice(event)"> Above ₹50000 <span>10</span></label>
             </div>
+            
         </div>
         <div class="border-t border-gray-300 py-2">
             <div class="flex justify-between items-center cursor-pointer" onclick="toggleSection('rhythms')">
@@ -94,14 +476,15 @@
                 <i id="rhythms-icon" class="fas fa-plus"></i>
             </div>
             <div id="rhythms-options" class="hidden mt-2 rhythms-options">
-                <button>250</button>
-                <button>210</button>
-                <button>14</button>
-                <button>63</button>
-                <button>78</button>
-                <button>25</button>
-                <button>36</button>
+                <button onclick="filterByRhythms(250)">250</button>
+                <button onclick="filterByRhythms(210)">210</button>
+                <button onclick="filterByRhythms(14)">14</button>
+                <button onclick="filterByRhythms(63)">63</button>
+                <button onclick="filterByRhythms(78)">78</button>
+                <button onclick="filterByRhythms(25)">25</button>
+                <button onclick="filterByRhythms(36)">36</button>
             </div>
+            
         </div>
         <div class="border-t border-gray-300 py-2">
             <div class="flex justify-between items-center cursor-pointer" onclick="toggleSection('polyphony')">
@@ -109,13 +492,14 @@
                 <i id="polyphony-icon" class="fas fa-plus"></i>
             </div>
             <div id="polyphony-options" class="hidden mt-2 polyphony-options">
-                <button>120</button>
-                <button>450</button>
-                <button>630</button>
-                <button>780</button>
-                <button>12</button>
-                <button>25</button>
+                <button onclick="filterByPolyphony(120)">120</button>
+                <button onclick="filterByPolyphony(450)">450</button>
+                <button onclick="filterByPolyphony(630)">630</button>
+                <button onclick="filterByPolyphony(780)">780</button>
+                <button onclick="filterByPolyphony(12)">12</button>
+                <button onclick="filterByPolyphony(25)">25</button>
             </div>
+            
         </div>
         <div class="border-t border-gray-300 py-2">
             <div class="flex justify-between items-center cursor-pointer" onclick="toggleSection('functions')">
@@ -123,10 +507,11 @@
                 <i id="functions-icon" class="fas fa-plus"></i>
             </div>
             <div id="functions-options" class="hidden mt-2 functions-options">
-                <button>Connection to APP</button>
-                <button>LCD Display</button>
-                <button>Dance Music Mode</button>
+                <button onclick="filterByFunction('Connection to App')">Connection to APP</button>
+                <button onclick="filterByFunction('LCD Display')">LCD Display</button>
+                <button onclick="filterByFunction('Dance Music Mode')">Dance Music Mode</button>
             </div>
+            
         </div>
         <div class="border-t border-gray-300 py-2">
             <div class="flex justify-between items-center cursor-pointer" onclick="toggleSection('brand')">
@@ -134,14 +519,15 @@
                 <i id="brand-icon" class="fas fa-plus"></i>
             </div>
             <div id="brand-options" class="hidden mt-2 brand-options">
-                <button>CELVIANO Grand Hybrid</button>
-                <button>CELVIANO</button>
-                <button>Privia</button>
-                <button>CDP</button>
-                <button>CT-X</button>
-                <button>Casiotone</button>
-                <button>Mini Keyboard</button>
+                <button id="celviano-grand-hybrid">CELVIANO Grand Hybrid</button>
+                <button id="celviano">CELVIANO</button>
+                <button id="privia">Privia</button>
+                <button id="cdp">CDP</button>
+                <button id="ct-x">CT-X</button>
+                <button id="casiotone">Casiotone</button>
+                <button id="mini-keyboard">Mini Keyboard</button>
             </div>
+            
         </div>
         <div class="border-t border-gray-300 py-2">
             <div class="flex justify-between items-center cursor-pointer" onclick="toggleSection('color')">
@@ -149,17 +535,17 @@
                 <i id="color-icon" class="fas fa-plus"></i>
             </div>
             <div id="color-options" class="hidden mt-2 color-options">
-                <button style="background-color: black;"></button>
-                <button style="background-color: white;"></button>
-                <button style="background-color: red;"></button>
-                <button style="background-color: Blue;"></button>
-                <button style="background-color: Green;"></button>
-                <button style="background-color:Yellow;"></button>
-                <button style="background-color: pink;"></button>
+                <button style="background-color: black;" onclick="filterColor('black')"></button>
+                <button style="background-color: white;" onclick="filterColor('white')"></button>
+                <button style="background-color: red;" onclick="filterColor('red')"></button>
+                <button style="background-color: blue;" onclick="filterColor('blue')"></button>
+                <button style="background-color: green;" onclick="filterColor('green')"></button>
+                <button style="background-color: yellow;" onclick="filterColor('yellow')"></button>
+                <button style="background-color: pink;" onclick="filterColor('pink')"></button>
             </div>
         </div>
         <div class="border-t border-gray-300 py-4">
-            <button class="w-full border border-gray-300 py-2">Clear</button>
+            <button id="clearButton" class="w-full border border-gray-300 py-2">Clear</button>
         </div>
     </div>
 
@@ -221,7 +607,42 @@
             <p>For more information or e-waste pick up, please call 1800 2022746 or <a href="#">click here</a> for more details.</p>
         </div>
     </div>
-</footer>
-
+</footer> 
+<script src="https://kit.fontawesome.com/ba90694c48.js" crossorigin="anonymous"></script>
 <script src="music.js"></script>
 
+
+
+<script>
+    const scrollContainer = document.getElementById('scrollContainer');
+   const nextButton = document.getElementById('nextButton');
+   const prevButton = document.getElementById('prevButton');
+
+   nextButton.addEventListener('click', () => {
+    scrollContainer.scrollBy({ left: 400, behavior: 'smooth' });
+   });
+
+   prevButton.addEventListener('click', () => {
+    scrollContainer.scrollBy({ left: -400, behavior: 'smooth' });
+   });
+
+
+   function toggleSection(section) {
+            const options = document.getElementById(`${section}-options`);
+            const icon = document.getElementById(`${section}-icon`);
+            if (options.classList.contains("hidden")) {
+                options.classList.remove("hidden", "dropdown-leave", "dropdown-leave-active");
+                options.classList.add("dropdown-enter", "dropdown-enter-active");
+                icon.classList.remove("fa-plus");
+                icon.classList.add("fa-minus");
+            } else {
+                options.classList.remove("dropdown-enter", "dropdown-enter-active");
+                options.classList.add("dropdown-leave", "dropdown-leave-active");
+                setTimeout(() => {
+                    options.classList.add("hidden");
+                }, 300);
+                icon.classList.remove("fa-minus");
+                icon.classList.add("fa-plus");
+            }
+        }
+</script>
