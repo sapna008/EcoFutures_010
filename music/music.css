@@ -26,7 +26,7 @@
 /* Main container to hold sidebar and product cards */
 .container {
     display: flex;
-    margin-top: 60px; /* Adjusted for navbar space */
+    margin-top: 60px; 
 }
 
 /* Sidebar styling with scroll */
@@ -37,11 +37,8 @@
     background-color: #f8f8f8;
     overflow-y: auto;
     /* height: 100vh; */
-    height: calc(100vh - 140px);
-     /* Adjusted for navbar */
-     position: fixed;
-    /* position: sticky; */
-    top: 80px; /* Adjusted for navbar */
+    height: calc(100vh - 140px);    
+    top: 80px;
     left: 10px;
     bottom: 100px;
 
@@ -92,7 +89,7 @@
     justify-content: center;
     padding: 20px;
     flex-grow: 1;
-    margin-left: 2em; /* Adjusted for sidebar width */
+    margin-left: 2em;
 }
 
 /* Individual product card styling */
@@ -495,9 +492,9 @@ text-decoration: none;
 }
 
 .no-products i {
-    font-size: 4em; /* Increase icon size */
+    font-size: 4em;
     margin-top: 20px;
-    display: block; /* Icons will be displayed on separate lines */
+    display: block; 
     margin-left: auto;
     margin-right: auto;
     transition: transform 5s ease, color 1s ease;
@@ -525,8 +522,8 @@ text-decoration: none;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    font-size: 4em; /* Icon size */
-    transition: opacity 1s ease; /* Smooth transition for opacity */
+    font-size: 4em;
+    transition: opacity 1s ease; 
     animation: fadeInOpacity 2s ease forwards; 
 }
 
@@ -574,7 +571,7 @@ text-decoration: none;
 #top-img {
     position: relative;
     width: 100%;
-    height: 600px; /* Adjust the height as needed */
+    height: 600px; 
     overflow: hidden;
 }
 
@@ -596,7 +593,7 @@ text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 100%; /* Allow full width for better responsiveness */
+  max-width: 100%;
   position: relative;
   padding-bottom: 56.25%;  /* This creates a 16:9 aspect ratio */
   height: 0;
@@ -626,11 +623,50 @@ text-decoration: none;
     /* height: 100vh; */
     height: calc(100vh - 150px);
      /* Adjusted for navbar */
-     position: sticky;
-    /* position: sticky; */
-    /* top: 100px;  */
-    /* Adjusted for navbar */
-    /* left: 10px; */
+     position: sticky;    
     bottom: 0;
 
 }
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    /* .cards-container {
+        flex-direction: column;
+    } */
+
+    .sidebar {
+        width: 100%;
+        padding: 1em;
+        position: relative;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+        flex-direction: column;
+      }
+    
+    .sidebar h2 {
+      font-size: 1em;
+    }
+  
+    .cards-container {
+      flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        padding: 1em;
+        position: relative;
+    }
+  }
+
