@@ -250,6 +250,11 @@ function displayCards(products) {
         product.productLabel.trim() != "RUI HACHIMURA SIGNATURE MODEL"
       ) {
         const card = createCard(product);
+        card.addEventListener("click", () => {
+          // Navigate to details page with product information
+          const productDetailsURL = `${product.url}`;
+          window.location.href = productDetailsURL;
+        });
         displayProducts.append(card);
       }
     });
