@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Scientific Calculators</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../../globalStyle.css" />
     <link rel="stylesheet" href="../../styles/calculator/calculator.css" />
     <link
@@ -19,6 +20,367 @@
     />
   </head>
   <body>
+    <div>
+      <nav class="bg-white border-none shadow-md">
+        <div class="container mx-auto px-4 py-3">
+          <div class="flex justify-between items-center">
+            <div class="flex justify-center items-center gap-4">
+              <div
+                class="xl:hidden md:block sm:block hamburger w-[24px] h-[24px] cursor-pointer"
+                id="hamburger"
+              >
+                <img
+                  class="w-full h-full"
+                  src="https://img.icons8.com/?size=100&id=36389&format=png&color=000000"
+                  alt=""
+                />
+              </div>
+
+              <a href="#" class="flex items-center">
+                <img
+                  src="/LOGO.svg"
+                  class="w-[65px] h-[17px]"
+                  alt="Casio Logo"
+                />
+              </a>
+            </div>
+
+            <div class="hidden xl:block">
+              <div class="flex space-x-8 text-[14px] font-semibold relative">
+                <div
+                  class="group relative border-b-2 border-transparent hover:border-[#000000] pt-4 pb-3 transition-all duration-300"
+                  onmouseover="showDropdown('watches')"
+                  onmouseout="hideDropdown()"
+                  onclick="changePage('Watches')"
+                >
+                  <a href="" class="text-[#2c3042]"> Watches </a>
+                </div>
+                <div
+                  class="group relative border-b-2 border-transparent hover:border-[#000000] pt-4 pb-3 transition-all duration-300"
+                  onmouseover="showDropdown('calculator')"
+                  onmouseout="hideDropdown()"
+                  onclick="changePage('Watches')"
+                >
+                  <a href="" class="text-[#2c3042]">
+                    Electronic Musical Instruments
+                  </a>
+                </div>
+                <div
+                  class="group relative border-b-2 border-transparent hover:border-[#000000] pt-4 pb-3 transition-all duration-300"
+                  onmouseover="showDropdown('instruments')"
+                  onmouseout="hideDropdown()"
+                  onclick="changePage('Watches')"
+                >
+                  <a href="" class="text-[#2c3042]"> Calculators </a>
+                </div>
+                <div
+                  class="group relative border-b-2 border-transparent hover:border-[#000000] pt-4 pb-3 transition-all duration-300"
+                  onmouseover="showDropdown('other')"
+                  onmouseout="hideDropdown()"
+                  onclick="changePage('Watches')"
+                >
+                  <a href="" class="text-[#2c3042]">
+                    Label Printers & Others
+                  </a>
+                </div>
+                <div
+                  id="hoverDropdown"
+                  class="absolute z-20 bg-white-900 hidden shadow-[inset 0 0 8px rgba(0, 0, 0, 1)] w-[70rem] h-[20rem] bg-white shadow-lg top-full left-0 right-0 transform -translate-x-[5rem] my-0 mx-auto transition-all duration-300 ease-in-out opacity-0"
+                >
+                  <div class="p-4 bg-white">
+                    <div id="hoverContent">Hover Content</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-8">
+              <div
+                class="relative lg:flex hidden items-center bg-white rounded-full border-b-2"
+              >
+                <input
+                  type="text"
+                  id="search"
+                  placeholder="Search...."
+                  class="bg-transparent px-4 py-2 w-[200px] text-sm focus:outline-none"
+                />
+                <img
+                  src="https://img.icons8.com/?size=100&id=132&format=png&color=000000"
+                  class="w-5 h-5 ml-3"
+                  alt="Search Icon"
+                />
+              </div>
+
+              <div class="flex items-center gap-6 relative">
+                <div
+                  class="flex flex-col items-center cursor-pointer border-b-4 border-transparent"
+                >
+                  <img
+                    src="https://img.icons8.com/?size=100&id=87&format=png&color=000000"
+                    class="w-5"
+                    alt="Wishlist"
+                    onclick="wishlist()"
+                  />
+                  <span class="text-xs hidden lg:block xl:block"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div
+        id="drawer-navigation"
+        class="fixed inset-y-0 top-0 left-0 w-9/12 h-screen bg-white shadow-lg transition-transform transform -translate-x-full"
+      >
+        <div>
+          <ul class="mt-4 space-y-2 text-black h-[80%] overflow-y-auto">
+            <li>
+              <button
+                type="button"
+                class="flex items-center w-full p-2 text-base transition duration-75 rounded-lg group hover:bg-gray-100"
+                aria-controls="sliderDropdown"
+                data-collapse-toggle="sliderDropdown"
+                id="dropdownButton"
+              >
+                <span
+                  class="text-black font-bold flex-1 ms-3 text-left rtl:text-right whitespace-nowrap"
+                >
+                  Watches
+                </span>
+              </button>
+
+              <ul id="sliderDropdown" class="hidden py-2 space-y-2">
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100"
+                  >
+                    &lt; G-SHOCK
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100"
+                  >
+                    &lt; CASIO VINTAGE
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100"
+                  >
+                    &lt; CASIO EDIFIC
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100"
+                  >
+                    &lt; CASIO COLLECTION
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100"
+                  >
+                    &lt; SHEEN
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100"
+                  >
+                    &lt; BABY-G
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100"
+                  >
+                    &lt; PROTREK
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100"
+                  >
+                    &lt; CLOCK
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100"
+                  >
+                    &lt; OTHERS
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100"
+                  >
+                    All Watches
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <button
+                type="button"
+                class="flex items-center w-full p-2 text-base transition duration-75 rounded-lg group hover:bg-gray-100"
+                aria-controls="womenDropdown"
+                data-collapse-toggle="womenDropdown"
+                id="womenButton"
+              >
+                <span
+                  class="text-black font-bold flex-1 ms-3 text-left rtl:text-right whitespace-nowrap"
+                >
+                  Electronic Musical Instruments
+                </span>
+              </button>
+
+              <ul id="womenDropdown" class="hidden py-2 space-y-2">
+                <li>
+                  <a
+                    href="../music/music.html"
+                    class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100"
+                  >
+                    &lt; Shop By Skill
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="../music/music.html"
+                    class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100"
+                  >
+                    &lt; Keyboard & Pianos
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="../music/music.html"
+                    class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100"
+                  >
+                    &lt; Others
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="../music/music.html"
+                    class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100"
+                  >
+                    All Electronic Musical Instruments
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <button
+                type="button"
+                class="flex items-center w-full p-2 text-base transition duration-75 rounded-lg group hover:bg-gray-100"
+                aria-controls="kidsDropdown"
+                data-collapse-toggle="kidsDropdown"
+                id="kidsButton"
+              >
+                <span
+                  class="text-black font-bold flex-1 ms-3 text-left rtl:text-right whitespace-nowrap"
+                >
+                  Calculators
+                </span>
+              </button>
+
+              <ul id="kidsDropdown" class="hidden py-2 space-y-2">
+                <li>
+                  <a
+                    href="../pages/calculator/scientificCalculator.html"
+                    class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100"
+                  >
+                    Scientific Calculators
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="../pages/calculator/basicCalculator.html"
+                    class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100"
+                  >
+                    Desktop Calculators
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="../pages/calculator/scientificCalculator.html"
+                    class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100"
+                  >
+                    Apps & Software-Sienntific Calculators
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100"
+                  >
+                    Casio Calculator Journey
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100"
+                  >
+                    Contents
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <button
+                type="button"
+                class="flex items-center w-full p-2 text-base transition duration-75 rounded-lg group hover:bg-gray-100"
+                aria-controls="homeLivingDropdown"
+                data-collapse-toggle="homeLivingDropdown"
+                id="homeLivingButton"
+              >
+                <span
+                  class="text-black font-bold flex-1 ms-3 text-left rtl:text-right whitespace-nowrap"
+                >
+                  Label Printers & Tapes
+                </span>
+              </button>
+
+              <ul id="homeLivingDropdown" class="hidden py-2 space-y-2">
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100"
+                  >
+                    Label Printers
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100"
+                  >
+                    Label Tapes
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
     <div class="hero-img-cont">
       <img
         id="hero-img"
@@ -281,5 +643,6 @@
         }
       }
     </script>
+    <script src="../../script.js"></script>
   </body>
 </html>
