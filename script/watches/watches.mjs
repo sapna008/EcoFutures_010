@@ -50,7 +50,15 @@ function sortItems([...products]) {
 
   switch (selectedValue) {
     case "newest":
-      sortedItems = products;
+      sortedItems = products.sort((a, b) => {
+        if (a.label === "new" && b.label !== "new") {
+          return -1;
+        }
+        if (b.label === "new" && a.label !== "new") {
+          return 1;
+        }
+        return 0;
+      });
       break;
     case "priceHighLow":
       sortedItems = products.sort(
@@ -76,106 +84,7 @@ function sortItems([...products]) {
       sortedItems = products;
   }
 
-  // Apply filters
-  sortedItems = applyFilters(sortedItems);
-
   displayCards(sortedItems);
-}
-// Initialize filters
-let filters = {
-  power: [],
-  digits: [],
-  priceRange: [],
-  color: [],
-  series: [],
-  type: [],
-};
-// Apply all active filters
-// function applyFilters(products) {
-//   return products.filter((product) => {
-//     // console.log(filters);
-
-//     return (
-//       (filters.power.length === 0 || filters.power.includes(product.power)) &&
-//       (filters.digits.length === 0 ||
-//         filters.digits.includes(product.digits)) &&
-//       (filters.priceRange.length === 0 ||
-//         filters.priceRange.some((range) => {
-//           // Example logic for price range filter
-//           if (range === "Below ₹500")
-//             return parseFloat(product.listPrice) < 500;
-//           if (range === "₹500 - ₹1000")
-//             return (
-//               parseFloat(product.listPrice) >= 500 &&
-//               parseFloat(product.listPrice) <= 1000
-//             );
-//           if (range === "₹1000 - ₹2000")
-//             return (
-//               parseFloat(product.listPrice) >= 1000 &&
-//               parseFloat(product.listPrice) <= 2000
-//             );
-//           if (range === "Above ₹2000")
-//             return parseFloat(product.listPrice) > 2000;
-//         })) &&
-//       (filters.color.length === 0 || filters.color.includes(product.color)) &&
-//       (filters.series.length === 0 ||
-//         filters.series.includes(product.series)) &&
-//       (filters.type.length === 0 || filters.type.includes(product.type))
-//     );
-//   });
-// }
-function applyFilters(products) {
-  return products.filter((product) => {
-    return (
-      // Power filter
-      (filters.power.length === 0 ||
-        filters.power.some((power) =>
-          product.additionalAttributions.powerSupply.some((p) =>
-            p.includes(power)
-          )
-        )) &&
-      // Digits filter
-      (filters.digits.length === 0 ||
-        filters.digits.some((digit) =>
-          product.additionalAttributions.digitNumber.some((d) =>
-            d.includes(digit)
-          )
-        )) &&
-      // Price range filter
-      (filters.priceRange.length === 0 ||
-        filters.priceRange.some((range) => {
-          if (range === "Below ₹500")
-            return parseFloat(product.listPrice) < 500;
-          if (range === "₹500 - ₹1000")
-            return (
-              parseFloat(product.listPrice) >= 500 &&
-              parseFloat(product.listPrice) <= 1000
-            );
-          if (range === "₹1000 - ₹2000")
-            return (
-              parseFloat(product.listPrice) >= 1000 &&
-              parseFloat(product.listPrice) <= 2000
-            );
-          if (range === "Above ₹2000")
-            return parseFloat(product.listPrice) > 2000;
-        })) &&
-      // Color filter
-      (filters.color.length === 0 ||
-        filters.color.some((color) =>
-          product.additionalAttributions.color.includes(color)
-        )) &&
-      // Series filter
-      (filters.series.length === 0 ||
-        filters.series.some((series) => product.series.includes(series))) &&
-      // Type filter
-      (filters.type.length === 0 ||
-        filters.type.some((type) =>
-          product.additionalAttributions.productType.some((t) =>
-            t.includes(type)
-          )
-        ))
-    );
-  });
 }
 
 // Display products in cards
@@ -185,8 +94,14 @@ async function displayCards(products) {
   if (products && products.length != 0) {
     displayProducts.style.display = "grid";
     products.forEach((product) => {
-      const card = createCard(product);
-      displayProducts.append(card);
+      if (
+        product.productLabel.trim() !=
+          "SURFRIDER FOUNDATION collaboration model" ||
+        product.productLabel.trim() != "RUI HACHIMURA SIGNATURE MODEL"
+      ) {
+        const card = createCard(product);
+        displayProducts.append(card);
+      }
     });
   } else {
     displayProducts.innerHTML = `<div class="no-products-message" >No Products found! 🥲</div>`;

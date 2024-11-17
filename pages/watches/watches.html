@@ -24,7 +24,7 @@
     </div>
 
     <div class="prod-nav">
-      <h2 class="prod-nav-head">All Watches</h2>
+      <h2 class="prod-nav-head">Watches</h2>
       <ul class="prod-nav-items">
         <li class="prod-nav-item"><a href="">Catalog </a></li>
         <li class="prod-nav-item"><a href="">Services </a></li>
@@ -37,7 +37,7 @@
     </div>
 
     <div id="prod-nav-mobile">
-      <h2 class="prod-nav-mobile-head">All Watches</h2>
+      <h2 class="prod-nav-mobile-head">Watches</h2>
       <i id="cross" class="fa-solid fa-x"></i>
       <ul class="prod-nav-mobile-items">
         <li class="prod-nav-mobile-item"><a href="">Catalog </a></li>
@@ -50,33 +50,28 @@
     <div class="category-nav">
       <ul class="category-nav-items">
         <li class="category-nav-item">
-          <a href="basicCalculator.html">All</a>
+          <a href="watches.html">All</a>
         </li>
         <li class="category-nav-item">
-          <a href="basicCalculatorCategory.html?subpath=practical"
-            >Practical Calculators
-          </a>
+          <a href="watchesCategory.html?subpath=gshock">G-SHOCK </a>
         </li>
         <li class="category-nav-item">
-          <a href="basicCalculatorCategory.html?subpath=check"
-            >Check Calculators
-          </a>
+          <a href="watchesCategory.html?subpath=vintage">Vintage </a>
         </li>
         <li class="category-nav-item">
-          <a
-            href="basicCalculatorCategory.html?subpath=waterprotected-dustproof"
-            >Water-Protected & Dust-Proof Calculators</a
-          >
+          <a href="watchesCategory.html?subpath=edifice">EDIFICE</a>
         </li>
         <li class="category-nav-item">
-          <a href="basicCalculatorCategory.html?subpath=colorful"
-            >Colorful Calculators</a
-          >
+          <a href="watchesCategory.html?subpath=casioCol">CASIO COLLECTION</a>
         </li>
         <li class="category-nav-item">
-          <a href="basicCalculatorCategory.html?subpath=printer"
-            >Printing Calculators</a
-          >
+          <a href="watchesCategory.html?subpath=babyg">BABY-G</a>
+        </li>
+        <li class="category-nav-item">
+          <a href="watchesCategory.html?subpath=protrek">PRO TREK</a>
+        </li>
+        <li class="category-nav-item">
+          <a href="watchesCategory.html?subpath=sheen">SHEEN</a>
         </li>
       </ul>
     </div>
@@ -136,30 +131,7 @@
               </label>
             </div>
           </div>
-          <!-- Power Filter -->
-          <div class="filter-category">
-            <div class="filter-header" onclick="toggleSection('power')">
-              <span>Power</span>
-              <i id="power-icon" class="fas fa-plus"></i>
-            </div>
-            <div id="power-options" class="filter-options hidden">
-              <button class="filter-button">Solar-Powered</button>
-            </div>
-          </div>
-          <!-- Digits -->
-          <div class="filter-category">
-            <div class="filter-header" onclick="toggleSection('digits')">
-              <span>Digits</span>
-              <i id="digits-icon" class="fas fa-plus"></i>
-            </div>
-            <div id="digits-options" class="filter-options hidden">
-              <button class="filter-button">14 digits</button>
-              <button class="filter-button">12 digits</button>
-              <button class="filter-button">10 digits</button>
-              <button class="filter-button">8 digits</button>
-            </div>
-          </div>
-          <!-- Price filter -->
+          <!-- Price Range -->
           <div class="filter-category">
             <div class="filter-header" onclick="toggleSection('prices')">
               <span>Price Range</span>
@@ -170,17 +142,83 @@
               class="filter-options hidden price-checkboxes"
             >
               <label class="price-checkbox"
-                ><input type="checkbox" /> Below ₹500
+                ><input type="checkbox" /> Below ₹5000
               </label>
               <label class="price-checkbox"
-                ><input type="checkbox" /> ₹500 - ₹1000
+                ><input type="checkbox" /> ₹5000 - ₹10000
               </label>
               <label class="price-checkbox"
-                ><input type="checkbox" /> ₹1000 - ₹2000
+                ><input type="checkbox" /> ₹10000 - ₹20000
               </label>
               <label class="price-checkbox"
-                ><input type="checkbox" /> Above ₹2000
+                ><input type="checkbox" /> ₹20000 - ₹30000
               </label>
+              <label class="price-checkbox"
+                ><input type="checkbox" /> ₹30000 - ₹40000
+              </label>
+              <label class="price-checkbox"
+                ><input type="checkbox" /> ₹40000 - ₹50000
+              </label>
+              <label class="price-checkbox"
+                ><input type="checkbox" /> Above ₹50000
+              </label>
+            </div>
+          </div>
+          <!-- Sizes -->
+          <div class="filter-category">
+            <div class="filter-header" onclick="toggleSection('sizes')">
+              <span>Sizes</span>
+              <i id="sizes-icon" class="fas fa-plus"></i>
+            </div>
+            <div id="sizes-options" class="filter-options hidden">
+              <button class="filter-button">Men's sizes</button>
+              <button class="filter-button">Women's sizes</button>
+            </div>
+          </div>
+          <!-- Functions -->
+          <div class="filter-category">
+            <div class="filter-header" onclick="toggleSection('functions')">
+              <span>Functions</span>
+              <i id="functions-icon" class="fas fa-plus"></i>
+            </div>
+            <div id="functions-options" class="filter-options hidden">
+              <button class="filter-button">Solar charger</button>
+              <button class="filter-button">Smartphone Link</button>
+              <button class="filter-button">Tide graph</button>
+              <button class="filter-button">
+                Hand home position correction
+              </button>
+              <button class="filter-button">Moon data</button>
+            </div>
+          </div>
+          <!-- Brand Series -->
+          <div class="filter-category">
+            <div class="filter-header" onclick="toggleSection('brands')">
+              <span>Functions</span>
+              <i id="brands-icon" class="fas fa-plus"></i>
+            </div>
+            <div id="brands-options" class="filter-options hidden">
+              <button class="filter-button">G-SHOCK</button>
+              <button class="filter-button">BABY-G</button>
+              <button class="filter-button">PRO TREK</button>
+              <button class="filter-button">EDIFICE</button>
+              <button class="filter-button">SHEEN</button>
+              <button class="filter-button">CASIO</button>
+              <button class="filter-button">Paired Watches</button>
+              <button class="filter-button">Table Clocks</button>
+            </div>
+          </div>
+
+          <!--Display Type -->
+          <div class="filter-category">
+            <div class="filter-header" onclick="toggleSection('type')">
+              <span>Display Type</span>
+              <i id="type-icon" class="fas fa-plus"></i>
+            </div>
+            <div id="type-options" class="filter-options hidden">
+              <button class="filter-button">Digital</button>
+              <button class="filter-button">Analog</button>
+              <button class="filter-button">Digital and analog</button>
             </div>
           </div>
           <!-- Color -->
@@ -220,36 +258,8 @@
               ></button>
             </div>
           </div>
-          <!-- Series -->
-          <div class="filter-category">
-            <div class="filter-header" onclick="toggleSection('series')">
-              <span>Series</span>
-              <i id="series-icon" class="fas fa-plus"></i>
-            </div>
-            <div id="series-options" class="filter-options hidden">
-              <button class="filter-button">Practical Calculators</button>
-              <button class="filter-button">Check Calculators</button>
-              <button class="filter-button">Check Calculators</button>
-              <button class="filter-button">Colorful Calculators</button>
-              <button class="filter-button">Prinitng Calculators</button>
-            </div>
-          </div>
-          <!-- Type -->
-          <div class="filter-category">
-            <div class="filter-header" onclick="toggleSection('type')">
-              <span>Type</span>
-              <i id="type-icon" class="fas fa-plus"></i>
-            </div>
-            <div id="type-options" class="filter-options hidden">
-              <button class="filter-button">Compact Desk Type</button>
-              <button class="filter-button">Desktop Type</button>
-              <button class="filter-button">Dual Leaf Type</button>
-              <button class="filter-button">Mini Desk Type</button>
-              <button class="filter-button">Portable Type</button>
-              <button class="filter-button">Water Proof Type</button>
-            </div>
-          </div>
         </div>
+
         <div class="clear-button">
           <button>Clear</button>
         </div>
