@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f5f5f5;
+      }
+      .login-container {
+        background-color: white;
+        padding: 80px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 600px;
+        text-align: center;
+      }
+      .login-container h2 {
+        margin-bottom: 50px;
+        font-size: 40px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        color: white;
+        font-weight: bold;
+      }
+      .btn-facebook {
+        background-color: #3b5998;
+        padding: 15px;
+        font-size: 20px;
+        text-transform: uppercase;
+        margin-right: 10px;
+      }
+      .btn-google {
+        background-color: #db4437;
+        padding: 15px;
+        font-size: 20px;
+        text-transform: uppercase;
+      }
+      .btn-otp {
+        background-color: #008cba;
+        padding: 15px;
+        font-size: 20px;
+        width: 350px;
+      }
+      .separator {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+      }
+
+      .line {
+        flex: 1;
+        height: 1px;
+        background-color: #ccc;
+        margin: 0 10px;
+      }
+
+      .or {
+        color: #555;
+        white-space: nowrap;
+        font-size: 18px;
+      }
+      .label {
+        font-size: 18px;
+      }
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 14px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .forgot-password {
+        text-align: right;
+        margin: 10px 0;
+        font-size: 0.9em;
+        color: blue;
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: 15px;
+      }
+      .create-account {
+        margin-top: 10px;
+        font-size: 16px;
+      }
+      .messageDiv {
+        background-color: hsl(327, 90%, 28%);
+        color: #ff0000;
+        padding: 10px 20px;
+        margin: 10px;
+        border-radius: 5px;
+        font-size: 1rem;
+        opacity: 0;
+        animation: fadeOut 7s forwards;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="login-container">
+      <h2>Login</h2>
+      <div id="signUpMessage" class="messageDiv" style="display: none"></div>
+      <button class="btn btn-facebook">
+        <i class="fab fa-facebook-f"></i> Sign In with Facebook
+      </button>
+      <button class="btn btn-google">
+        <i class="fab fa-google"></i> Sign in with Google
+      </button>
+      <div class="separator">
+        <span class="line"></span>
+        <span class="or">or</span>
+        <span class="line"></span>
+      </div>
+      <button class="btn btn-otp">Login via OTP</button>
+      <div class="separator">
+        <span class="line"></span>
+        <span class="or">or</span>
+        <span class="line"></span>
+      </div>
+      <label class="label" for="email">Enter email/mobile number</label>
+      <input
+        type="text"
+        id="emailLogin"
+        placeholder="Email / Mobile*"
+        required
+      />
+      <label class="label" for="password">Enter Password</label>
+      <input
+        type="password"
+        id="passwordLogin"
+        placeholder="Password*"
+        required
+      />
+      <div class="forgot-password">forgot password</div>
+      <button id="signInn" class="btn btn-otp">Login</button>
+      <div class="create-account">
+        New to Casio? <a href="./signup.html">Create an account</a>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="./firebaseauth.js"></script> -->
+
+    <div class="login-container">
+      <h2>Login</h2>
+      <div id="signInMessage" class="messageDiv" style="display: none"></div>
+      <button class="btn btn-facebook">
+        <i class="fab fa-facebook-f"></i> Sign In with Facebook
+      </button>
+      <button id="googleSignInBtn" class="btn btn-google">
+        <i class="fab fa-google"></i> Sign in with Google
+      </button>
+      <div class="separator">
+        <span class="line"></span>
+        <span class="or">or</span>
+        <span class="line"></span>
+      </div>
+      <!-- <button class="btn btn-otp">Login via OTP</button> -->
+
+      <button id="otpLoginBtn" class="btn btn-otp">Login via OTP</button>
+      <div id="otpModal" style="display: none">
+        <label for="phoneNumber">Enter Phone Number:</label>
+        <input type="text" id="phoneNumber" placeholder="+1234567890" />
+        <button id="sendOtpBtn">Send OTP</button>
+
+        <div id="otpVerification" style="display: none">
+          <label for="otpCode">Enter OTP:</label>
+          <input type="text" id="otpCode" placeholder="123456" />
+          <button id="verifyOtpBtn">Verify OTP</button>
+        </div>
+      </div>
+
+      <div id="signInMessage" style="display: none; color: red"></div>
+
+      <div class="separator">
+        <span class="line"></span>
+        <span class="or">or</span>
+        <span class="line"></span>
+      </div>
+      <label class="label" for="email">Enter email/mobile number</label>
+      <input
+        type="text"
+        id="emailLogin"
+        placeholder="Email / Mobile*"
+        required
+      />
+      <label class="label" for="password">Enter Password</label>
+      <input
+        type="password"
+        id="passwordLogin"
+        placeholder="Password*"
+        required
+      />
+      <div class="forgot-password">forgot password</div>
+      <button id="signIn" class="btn btn-otp">Login</button>
+      <div class="create-account">
+        New to Casio? <a href="./signup.html">Create an account</a>
+      </div>
+    </div>
+    <script type="module" src="./firebaseauth.js"></script>
+  </body>
+</html>
