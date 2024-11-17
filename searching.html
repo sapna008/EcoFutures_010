@@ -24,123 +24,140 @@
   <!-- navbar style end -->
 </head>
 <body >
-        <!-- navigation bar -->
-        <div>
-            <nav class="bg-white border-none shadow-md">
-              <div class="container mx-auto px-4 py-3">
-                <div class="flex justify-between items-center">
-                  <div class="flex justify-center items-center gap-4">
-                    <div
-                      class="xl:hidden md:block sm:block hamburger w-[24px] h-[24px] cursor-pointer"
-                      id="hamburger"
-                    >
-                      <img
-                        class="w-full h-full"
-                        src="https://img.icons8.com/?size=100&id=36389&format=png&color=000000"
-                        alt=""
-                      />
-                    </div>
-      
-                    <a href="#" class="flex items-center">
-                      <img
-                        src="./LOGO.svg"
-                        class="w-[65px] h-[17px]"
-                        alt="Casio Logo"
-                      />
-                    </a>
-                  </div>
-      
-                  <div class="hidden xl:block">
-                    <div class="flex space-x-8 text-[14px] font-semibold relative">
-                      <div
-                        class="group relative border-b-2 border-transparent hover:border-[#000000] pt-4 pb-3 transition-all duration-300"
-                        onmouseover="showDropdown('watches')"
-                        onmouseout="hideDropdown()"
-                        onclick="changePage('Watches')"
-                      >
-                        <a href="/styles/calculator/basicCalculator.css" class="text-[#2c3042]">
-                          Watches
-                        </a>
-                      </div>
-                      <div
-                        class="group relative border-b-2 border-transparent hover:border-[#000000] pt-4 pb-3 transition-all duration-300"
-                        onmouseover="showDropdown('calculator')"
-                        onmouseout="hideDropdown()"
-                        onclick="changePage('Watches')"
-                      >
-                        <a href="/music/music.html" class="text-[#2c3042]">
-                          Electronic Musical Instruments
-                        </a>
-                      </div>
-                      <div
-                        class="group relative border-b-2 border-transparent hover:border-[#000000] pt-4 pb-3 transition-all duration-300"
-                        onmouseover="showDropdown('instruments')"
-                        onmouseout="hideDropdown()"
-                        onclick="changePage('Watches')"
-                      >
-                        <a href="" class="text-[#2c3042]">
-                          Calculators
-                        </a>
-                      </div>
-                      <div
-                        class="group relative border-b-2 border-transparent hover:border-[#000000] pt-4 pb-3 transition-all duration-300"
-                        onmouseover="showDropdown('other')"
-                        onmouseout="hideDropdown()"
-                        onclick="changePage('Watches')"
-                      >
-                        <a href="" class="text-[#2c3042]">
-                          Label Printers & Others
-                        </a>
-                      </div>
-                      <div
-                        id="hoverDropdown"
-                        class="absolute z-20 bg-white-900 hidden shadow-[inset 0 0 8px rgba(0, 0, 0, 1)] w-[70rem] h-[20rem] bg-white shadow-lg top-full left-0 right-0 transform -translate-x-[5rem] my-0 mx-auto transition-all duration-300 ease-in-out opacity-0"
-                      >
-                        <div class="p-4 bg-white">
-                          <div id="hoverContent">Hover Content</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-      
-                  <div class="flex items-center gap-8">
-                    <div
-                      class="relative lg:flex hidden items-center bg-white rounded-full border-b-2"
-                    >
-                      <input
-                        type="text" 
-                        id="search"
-                        placeholder="Search...."
-                        class="bg-transparent px-4 py-2 w-[200px] text-sm focus:outline-none"
-                      />
-                      <img
-                        src="https://img.icons8.com/?size=100&id=132&format=png&color=000000"
-                        class="w-5 h-5 ml-3"
-                        alt="Search Icon"
-                      />
-                    </div>
-      
-                    <div class="flex items-center gap-6 relative">
-      
-                      <div
-                        class="flex flex-col items-center cursor-pointer border-b-4 border-transparent"
-                      >
-      
-                        <img
-                          src="https://img.icons8.com/?size=100&id=87&format=png&color=000000"
-                          class="w-5"
-                          alt="Wishlist"
-                          onclick="wishlist()"
-                        />
-                        <span class="text-xs hidden lg:block xl:block"></span>
-                      </div>
-                    </div>
+    <!-- navigation bar -->
+    <div>
+      <nav class="bg-white border-none shadow-md">
+        <div class="container mx-auto px-4 py-3">
+          <div class="flex justify-between items-center">
+            <div class="flex justify-center items-center gap-4">
+              <div
+                class="xl:hidden md:block sm:block hamburger w-[24px] h-[24px] cursor-pointer"
+                id="hamburger"
+              >
+                <img
+                  class="w-full h-full"
+                  src="https://img.icons8.com/?size=100&id=36389&format=png&color=000000"
+                  alt=""
+                />
+              </div>
+
+              <a href="./index.html" class="flex items-center">
+                <img
+                  src="./LOGO.svg"
+                  class="w-[65px] h-[17px]"
+                  alt="Casio Logo"
+                />
+              </a>
+            </div>
+
+            <div class="hidden xl:block">
+              <div class="flex space-x-8 text-[14px] font-semibold relative">
+                <div
+                  class="group relative border-b-2 border-transparent hover:border-[#000000] pt-4 pb-3 transition-all duration-300"
+                  onmouseover="showDropdown('watches')"
+                  onmouseout="hideDropdown()"
+                  onclick="changePage('Watches')"
+                >
+                  <a href="./pages/watches/watches.html?mainpath=watches" class="text-[#2c3042]">
+                    Watches
+                  </a>
+                </div>
+                <div
+                  class="group relative border-b-2 border-transparent hover:border-[#000000] pt-4 pb-3 transition-all duration-300"
+                  onmouseover="showDropdown('calculator')"
+                  onmouseout="hideDropdown()"
+                  onclick="changePage('Watches')"
+                >
+                  <a href="./music/music.html" class="text-[#2c3042]">
+                    Electronic Musical Instruments
+                  </a>
+                </div>
+                <div
+                  class="group relative border-b-2 border-transparent hover:border-[#000000] pt-4 pb-3 transition-all duration-300"
+                  onmouseover="showDropdown('instruments')"
+                  onmouseout="hideDropdown()"
+                  onclick="changePage('Watches')"
+                >
+                  <a href="./pages/calculator/basicCalculator.html?mainpath=basicCal" class="text-[#2c3042]">
+                    Calculators
+                  </a>
+                </div>
+                <div
+                  class="group relative border-b-2 border-transparent hover:border-[#000000] pt-4 pb-3 transition-all duration-300"
+                  onmouseover="showDropdown('other')"
+                  onmouseout="hideDropdown()"
+                  onclick="changePage('Watches')"
+                >
+                  <a href="" class="text-[#2c3042]">
+                    Label Printers & Others
+                  </a>
+                </div>
+                <div
+                  id="hoverDropdown"
+                  class="absolute z-20 bg-white-900 hidden shadow-[inset 0 0 8px rgba(0, 0, 0, 1)] w-[70rem] h-[20rem] bg-white shadow-lg top-full left-0 right-0 transform -translate-x-[5rem] my-0 mx-auto transition-all duration-300 ease-in-out opacity-0"
+                >
+                  <div class="p-4 bg-white">
+                    <div id="hoverContent">Hover Content</div>
                   </div>
                 </div>
               </div>
-            </nav>
+            </div>
+
+            <div class="flex items-center gap-8">
+              <div
+                class="relative lg:flex hidden items-center bg-white rounded-full border-b-2"
+              >
+                <input
+                  type="text" 
+                  id="search"
+                  placeholder="Search...."
+                  class="bg-transparent px-4 py-2 w-[200px] text-sm focus:outline-none"
+                />
+                <img
+                  src="https://img.icons8.com/?size=100&id=132&format=png&color=000000"
+                  class="w-5 h-5 ml-3"
+                  alt="Search Icon"
+                />
+              </div>
+
+              <div class="flex items-center gap-6 relative">
+
+                <div
+                  class="flex flex-col items-center cursor-pointer border-b-4 border-transparent"
+                >
+
+                  <img
+                    src="https://img.icons8.com/?size=100&id=87&format=png&color=000000"
+                    class="w-5"
+                    alt="Wishlist"
+                    onclick="wishlist()"
+                  />
+                  <span class="text-xs hidden lg:block xl:block"></span>
+                </div>
+
+              </div>
+              <div class="flex items-center gap-6 relative">
+
+                <div
+                  class="flex flex-col items-center cursor-pointer border-b-4 border-transparent"
+                >
+
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/128/6685/6685985.png"
+                    class="w-5"
+                    alt="Wishlist"
+                    onclick="login()"
+                  />
+                  <span class="text-xs hidden lg:block xl:block"></span>
+                </div>
+                
+              </div>
+            </div>
           </div>
-          <!-- navigation end -->
+        </div>
+      </nav>
+    </div>
+    <!-- navigation end -->
 
     <div class="bg-gray-100 font-sans min-h-screen flex items-center justify-center">
         <div class="container mx-auto p-6">

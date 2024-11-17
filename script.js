@@ -86,15 +86,15 @@ const watches = `<div class="watch-dropdown">
    <ul class="dropdown-items container mx-auto py-8 flex space-x-4">
       <div class="text-center">
          <img src="https://www.casio.com/content/experience-fragments/casio/locales/in/en/common/header/master/_jcr_content/root/responsivegrid/visual_header_copy_c/globalContainer/globalItem1/tab/item_1719898572045/content_panel_list/content_panel_202407021439276070/image.casiocoreimg.png/1726653913673/02.png" alt="Image 1" class="h-40 w-40 object-cover"> 
-         <p>hello</p>
+         <p>All G-SHOCK</p>
       </div>
       <div class="text-center">
          <img src="https://www.casio.com/content/experience-fragments/casio/locales/in/en/common/header/master/_jcr_content/root/responsivegrid/visual_header_copy_c/globalContainer/globalItem1/tab/item_1719898572045/content_panel_list/content_panel_202407021439276084/image.casiocoreimg.png/1723444951740/gm-110gc-1a.png" alt="Image 2" class="h-40 w-40 object-cover"> 
-         <p>hello</p>
+         <p>G-SHOCK Collections</p>
       </div>
       <div class="text-center">
          <img src="https://www.casio.com/content/experience-fragments/casio/locales/in/en/common/header/master/_jcr_content/root/responsivegrid/visual_header_copy_c/globalContainer/globalItem1/tab/item_1719898572045/content_panel_list/content_panel_2024070215025143411/image.casiocoreimg.png/1722235011028/gr-b300-1a.png" alt="Image 3" class="h-40 w-40 object-cover"> 
-         <p>hello</p>
+         <p>Best Seller</p>
       </div>
    </ul>
 </ul >
