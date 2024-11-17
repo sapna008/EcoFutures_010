@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
           showMessage("login is successful", "signInMessage");
           const user = userCredential.user;
           localStorage.setItem("loggedInUserId", user.uid);
-          window.location.href = "homepage.html";
+          window.location.href = "../../index.html";
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -187,7 +187,7 @@ document.getElementById("googleSignInBtn").addEventListener("click", () => {
       const user = result.user;
       console.log("Google Sign-In successful", user);
       showMessage("Google Sign-In Successful", "signInMessage");
-      window.location.href = "homepage.html";
+      window.location.href = "../../index.html";
     })
     .catch((error) => {
       console.error("Google Sign-In Error:", error);
@@ -238,7 +238,7 @@ document.getElementById("verifyOtpBtn").addEventListener("click", () => {
       const user = result.user;
       console.log("Phone login successful:", user);
       alert("Phone Login Successful");
-      window.location.href = "homepage.html";
+      window.location.href = "../../index.html";
     })
     .catch((error) => {
       console.error("Error Verifying OTP:", error);

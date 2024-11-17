@@ -281,3 +281,6 @@ function viewallitem(){
 function wishlist(){
   window.location.href = "./pages/wishlist.html";
 }
+function login(){
+  window.location.href = "/pages/authentication/login.html";
+}
