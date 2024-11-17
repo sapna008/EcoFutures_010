@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans min-h-screen flex items-center justify-center">
+    <div class="container mx-auto p-6 bg-white rounded-lg shadow-lg">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Checkout</h1>
+
+        <div id="product-details" class="flex flex-col md:flex-row gap-6">
+            <!-- Product details will be dynamically populated -->
+        </div>
+
+        <div class="mt-6">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">Payment Options</h2>
+            <div class="flex flex-col gap-4">
+                <label class="flex items-center gap-2">
+                    <input type="radio" name="payment" value="card" class="w-5 h-5" checked>
+                    <span>Credit/Debit Card</span>
+                </label>
+                <label class="flex items-center gap-2">
+                    <input type="radio" name="payment" value="upi" class="w-5 h-5">
+                    <span>UPI</span>
+                </label>
+                <label class="flex items-center gap-2">
+                    <input type="radio" name="payment" value="netbanking" class="w-5 h-5">
+                    <span>Net Banking</span>
+                </label>
+            </div>
+
+            <!-- Dynamic Pay Button -->
+            <button id="pay-button" class="mt-6 bg-black text-white text-lg px-8 py-4 rounded-lg hover:bg-gray-800 transition duration-200 w-full">
+                Pay ₹0
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function displayProductDetails() {
+            const params = new URLSearchParams(window.location.search);
+            const productName = params.get('productName');
+            const imagePath = params.get('imagePath');
+            const salePrice = params.get('salePrice');
+
+            const productDetailsDiv = document.getElementById('product-details');
+            const payButton = document.getElementById('pay-button');
+
+            if (productName && imagePath) {
+                // Populate product details
+                productDetailsDiv.innerHTML = `
+                    <div class="w-full md:w-1/2 flex items-center justify-center">
+                        <img src="${imagePath}" alt="${productName}" 
+                             class="w-full h-[300px] object-contain rounded-lg shadow-lg">
+                    </div>
+                    <div class="w-full md:w-1/2 flex flex-col justify-center">
+                        <h2 class="text-4xl font-bold text-gray-800 mb-4">${productName}</h2>
+                        <p class="text-gray-600 mb-4"><strong>Price:</strong> ₹${salePrice || 'N/A'}</p>
+                    </div>
+                `;
+
+                // Update Pay Button
+                payButton.textContent = `Pay ₹${salePrice || '0'}`;
+            } else {
+                productDetailsDiv.innerHTML = `
+                    <p class="text-gray-700 text-center">No product details found.</p>
+                `;
+                payButton.textContent = "Pay ₹0";
+            }
+        }
+
+        displayProductDetails();
+    </script>
+</body>
+</html>

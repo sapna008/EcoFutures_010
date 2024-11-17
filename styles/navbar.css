@@ -1,0 +1,18 @@
+.search {
+    transition: box-shadow 0.3s ease;
+    width: auto;
+    width: 95%;
+}
+
+.search:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+input::placeholder {
+    color: #a0aec0; 
+    font-size: 14px;
+}
+
+#drawer-navigation{
+    z-index: 99;
+}
