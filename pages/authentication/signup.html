@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Registration Form</title>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 70px;
+        width: 600px;
+      }
+
+      h2 {
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin: 10px 0 5px;
+      }
+
+      input[type="text"],
+      input[type="tel"],
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 15px;
+      }
+
+      small {
+        display: block;
+        margin: 10px 0;
+        font-size: 0.9em;
+        color: #777;
+      }
+
+      .terms {
+        margin: 15px 0;
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      .login-link {
+        text-align: center;
+        margin-top: 15px;
+      }
+      .messageDiv {
+        background-color: hsl(327, 90%, 28%);
+        color: #ffffff;
+        padding: 10px 20px;
+        margin: 10px;
+        border-radius: 5px;
+        font-size: 1rem;
+        opacity: 0;
+        animation: fadeOut 7s forwards;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Please enter the following details</h2>
+      <div id="signUpMessage" class="messageDiv" style="display: none"></div>
+      <form>
+        <label for="full-name">Full Name*</label>
+        <input type="text" id="full-name" required />
+
+        <label for="mobile">Mobile*</label>
+        <input type="tel" id="mobile" required />
+
+        <label for="email">Email*</label>
+        <input type="email" id="email" required />
+
+        <label for="password">Set Password*</label>
+        <input type="password" id="password" required />
+        <small
+          >• Must be at least 8 characters.<br />• Must be a combination of
+          alphabets & numbers.</small
+        >
+
+        <label for="confirm-password">Confirm Password*</label>
+        <input type="password" id="confirm-password" required />
+
+        <div class="terms">
+          <input type="checkbox" id="terms" required />
+          <label for="terms"
+            >By Continuing, I Agree To The <a href="#">Privacy Policy</a> And
+            <a href="#">Terms & Conditions</a>.</label
+          >
+        </div>
+
+        <button id="submitSignUp" type="submit">Continue</button>
+      </form>
+
+      <div class="login-link">
+        Already a member? <a href="./login.html">Login here</a>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="./firebaseauth.js"></script>
+</html>
