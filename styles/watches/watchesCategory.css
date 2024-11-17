@@ -166,7 +166,7 @@ a {
   font-weight: 500;
 }
 
-.container {
+.my-container {
   position: relative;
   display: flex;
   justify-content: center;
@@ -182,7 +182,7 @@ a {
   position: relative;
   width: 270px;
   height: 800px;
-  margin: 0 10px 0 5px;
+  margin: 0 10px 0 5px !important;
 }
 
 .filter-cont {

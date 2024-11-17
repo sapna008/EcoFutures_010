@@ -118,7 +118,7 @@ a {
   font-weight: 500;
 }
 
-.container {
+.my-container {
   position: relative;
   display: flex;
   justify-content: center;
