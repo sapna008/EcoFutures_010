@@ -10,6 +10,7 @@ Frontend with Firebase Integration
 Frontend: [Casio Clone App](https://casioclone.netlify.app)
 
 ## Directory Structure
+```
 /
 ├── .vscode/
 │   └── settings.json
@@ -20,76 +21,48 @@ Frontend: [Casio Clone App](https://casioclone.netlify.app)
 │   ├── basicCalculatorData.mjs
 │   ├── scientificCalculatorData.mjs
 │   ├── watchesData.mjs
-│
 ├── Music/
 │   ├── Music.html
 │   ├── Music.css
 │   ├── Music.js
-│  
 ├── pages/
-│   ├── authentication├── pages/
-│                           ├── firebase.js
-│                           ├── login.html
-│                           ├── signup.html
-├── Calculator ├── pages/
-│                     ├── basicCalculator.html
-│                     ├── basicCalculatorCategory.html
-│                     ├── scientificCalculator.html
-│                     ├── scientificCalculatorCategory.html
-├── Watches ├── pages/
-│                 ├── Watches.html
-│                 L── WatchesCategory.html
-│                =
+│   ├── authentication/
+│   │   ├── firebase.js
+│   │   ├── login.html
+│   │   └── signup.html
+│   ├── Calculator/
+│   │   ├── basicCalculator.html
+│   │   ├── basicCalculatorCategory.html
+│   │   ├── scientificCalculator.html
+│   │   └── scientificCalculatorCategory.html
+│   ├── Watches/
+│   │   ├── Watches.html
+│   │   ├── WatchesCategory.html
+│   │   └── WatchesDetails.html
 │   ├── ElectMusicalInstruments.html
-│   └── lableprinters.html
-|   |__viewall.html
-|   |__wishlist.html
+│   └── labelprinters.html
 ├── script/
-├── Calculator ├── pages/
-│                     ├── basicCalculator.mjs
-│                     ├── basicCalculatorCategory.mjs
-│                     ├── scientificCalculator.mjs
-│                     ├── scientificCalculatorCategory.mjs
-├── Watches ├── pages/
-│                 ├── Watches.js
-│                 ├── WatchesCategory.js
-│                 
-│   ├── allDrop.js
+│   ├── basicCalculator.js
+│   ├── scientificCalculator.js
+│   ├── watches.js
 │   ├── ElectMusicalInstruments.js
-│   └── lableprinters.js
-│   ├── ElectMusicalInstruments.js
-│   └── lableprinters.js
-│   ├── newDrop.js
+│   ├── search.js
 │   └── script.js
 ├── styles/
-├── Calculator ├── pages/
-│                     ├── basicCalculator.js
-│                     ├── basicCalculatorCategory.js
-│                     ├── scientificCalculator.js
-│                     ├── scientificCalculatorCategory.js
-├── Watches 
-│       ├── Watches.css
-│       |── WatchesCategory.css
-│                
-│   ├── ElectMusicalInstruments.css
-│   └── lableprinters.css
-|   |__navbar.css
-|   |__wishlist.html
-│   ├── beauty.css
-│   ├── men.css
+│   ├── globalStyle.css
 │   ├── navbar.css
-│   ├── studio.css
-│   ├── women.css
-│   └── globalStyle.css
-├── utils
-│       ├── data.json
+│   ├── Watches.css
+│   ├── Calculators.css
+│   ├── Music.css
+│   └── wishlist.css
+├── utils/
+│   └── data.json
 ├── buy.html
-├──globalStyle.css
-├── casio.png
-├──search.js
+├── wishlist.html
 ├── searching.html
 ├── README.md
-└── script.js
+└── casio.png
+```
 
 
 ## Video Walkthrough of the Project
