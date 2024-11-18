@@ -107,7 +107,7 @@ async function fetchAndRenderProducts() {
 
       const productImageUrl = `${baseUrl}${product.productAssets.path}`;
       const hoverImageUrl = `${baseUrl}${product.productAssetList[1]?.path || product.productAssets.path}`;
-      const detailPageUrl = `/DuoProject/pages/productDetailPage/product_detail.html?productId=${product.sku}`;
+      const detailPageUrl = `/pages/productDetailPage/product_detail.html?productId=${product.sku}`;
 
       const isWishlisted = skuArray.includes(product.sku);
 
