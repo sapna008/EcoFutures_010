@@ -134,7 +134,7 @@ const calculator = `
    <ul class="dropdown-items container mx-auto py-8 flex space-x-4">
       <div class="text-center p-2">
          <img src="https://www.casio.com/content/experience-fragments/casio/locales/in/en/common/header/master/_jcr_content/root/responsivegrid/visual_header_copy_c/globalContainer/globalItem3/tab/nav_tab_item/content_panel_list/content_panel_202406272033571941/image.casiocoreimg.png/1719837870011/fx-991cw-f.png" alt="Image 1" class="h-40 w-40 object-cover"> 
-         <div class="pt-4"><a href="./pages/calculator/basicCalculator.html">All Basic Calculators</a></div>
+         <div class="pt-4"><a href="../../pages/calculator/scientificCalculator.html">Scientific Calculator</a></div>
       </div>
       <div class="text-center p-2">
          <img src="https://www.casio.com/content/experience-fragments/casio/locales/in/en/common/header/master/_jcr_content/root/responsivegrid/visual_header_copy_c/globalContainer/globalItem3/tab/item_1718770052010/content_panel_list/content_panel_202406191336410036/image.casiocoreimg.jpeg/1719839046947/wd-320mt-seq1.jpeg" alt="Image 2" class="h-40 w-40 object-cover"> 
