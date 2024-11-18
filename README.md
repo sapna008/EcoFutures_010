@@ -69,7 +69,7 @@ Frontend: [Casio Clone App](https://casioclone.netlify.app)
 [Video Walkthrough of Features](https://youtu.be/QIB7459Lb2Y?si=34Tm1PrQg1rFDSSs)
 
 ## Video Walkthrough of the Codebase
-[Video Walkthrough of Codebase](https://youtu.be/QIB7459Lb2Y?si=34Tm1PrQg1rFDSSs) 
+[Video Walkthrough of Codebase](https://youtu.be/wHE5SXuj32Y) 
 
 ## Features
 -Dynamic Search Functionality: Users can search for products quickly across categories.
