@@ -119,7 +119,7 @@ The Casio Clone App provides a robust platform for web development enthusiasts t
 
 ## Credits
 - **Sapna Sarkar (Team Leader)** - Navigation Bar, and Footer, HomePage, Wishlist Page, PayNow page,Product Detail page
-- **Vivek Yadav** - Calculator Section
+- **Vivek Yadav** - Calculator Section and Watches Section
 - **Haniben Thakkar** - Musical Instrument Section
 - **Aman Kutlaria** - Watches Section
 - **vaibhav** -NA
